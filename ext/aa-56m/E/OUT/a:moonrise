@@ -1,0 +1,220 @@
+
+	Steve Moshier's Ephemeris Program v5.6
+
+Planetary and lunar positions approximate DE404.
+Terrestrial east longitude -71.1300 deg
+geocentric latitude 42.0785 deg
+Earth radius 0.99849
+temperature 12.0 C
+pressure 1010 mb
+Input time is TDT.
+
+Table of lunar rise, transit, and set times.
+
+lon 0, lat 40
+local meridian transit 1985 December 29 Sunday  1h 31m 45.694s  UT
+rises 1985 December 28 Saturday 17h 37m 40.349s  UT
+sets 1985 December 29 Sunday  9h 18m 33.520s  UT
+Visible hours 15.6814
+lon 0, lat 42
+local meridian transit 1985 December 29 Sunday  1h 31m 45.693s  UT
+rises 1985 December 28 Saturday 17h 29m 40.644s  UT
+sets 1985 December 29 Sunday  9h 25m 47.477s  UT
+Visible hours 15.9352
+lon 0, lat 44
+local meridian transit 1985 December 29 Sunday  1h 31m 45.692s  UT
+rises 1985 December 28 Saturday 17h 21m 00.357s  UT
+sets 1985 December 29 Sunday  9h 33m 35.537s  UT
+Visible hours 16.2098
+lon 0, lat 46
+local meridian transit 1985 December 29 Sunday  1h 31m 45.692s  UT
+rises 1985 December 28 Saturday 17h 11m 31.523s  UT
+sets 1985 December 29 Sunday  9h 42m 03.915s  UT
+Visible hours 16.5090
+lon 0, lat 48
+local meridian transit 1985 December 29 Sunday  1h 31m 45.691s  UT
+rises 1985 December 28 Saturday 17h 01m 03.804s  UT
+sets 1985 December 29 Sunday  9h 51m 20.478s  UT
+Visible hours 16.8380
+lon 0, lat 50
+local meridian transit 1985 December 29 Sunday  1h 31m 45.691s  UT
+rises 1985 December 28 Saturday 16h 49m 23.408s  UT
+sets 1985 December 29 Sunday 10h 01m 35.399s  UT
+Visible hours 17.2033
+lon 0, lat 52
+local meridian transit 1985 December 29 Sunday  1h 31m 45.690s  UT
+rises 1985 December 28 Saturday 16h 36m 11.272s  UT
+sets 1985 December 29 Sunday 10h 13m 02.186s  UT
+Visible hours 17.6141
+lon 0, lat 54
+local meridian transit 1985 December 29 Sunday  1h 31m 45.689s  UT
+rises 1985 December 28 Saturday 16h 20m 59.759s  UT
+sets 1985 December 29 Sunday 10h 25m 59.386s  UT
+Visible hours 18.0832
+lon 0, lat 56
+local meridian transit 1985 December 29 Sunday  1h 31m 45.689s  UT
+rises 1985 December 28 Saturday 16h 03m 06.134s  UT
+sets 1985 December 29 Sunday 10h 40m 53.592s  UT
+Visible hours 18.6298
+lon 0, lat 58
+local meridian transit 1985 December 29 Sunday  1h 31m 45.688s  UT
+rises 1985 December 28 Saturday 15h 41m 17.512s  UT
+sets 1985 December 29 Sunday 10h 58m 25.291s  UT
+Visible hours 19.2855
+lon 0, lat 60
+local meridian transit 1985 December 29 Sunday  1h 31m 45.687s  UT
+rises 1985 December 28 Saturday 15h 13m 07.484s  UT
+sets 1985 December 29 Sunday 11h 19m 41.787s  UT
+Visible hours 20.1095
+lon 0, lat 62
+local meridian transit 1985 December 29 Sunday  1h 31m 45.686s  UT
+rises 1985 December 28 Saturday 14h 31m 40.525s  UT
+sets 1985 December 29 Sunday 11h 46m 52.175s  UT
+Visible hours 21.2532
+lon 0, lat 64
+local meridian transit 1985 December 29 Sunday  1h 31m 45.686s  UT
+rises 4713 B.C. January 0 Monday 12h 00m 00.000s  UT
+sets 1985 December 29 Sunday 12h 26m 24.226s  TDT
+lon 0, lat 66
+local meridian transit 1985 December 29 Sunday  1h 31m 45.685s  UT
+rises 4713 B.C. January 0 Monday 12h 00m 00.000s  UT
+lon 0, lat 40
+local meridian transit 1986 January 2 Thursday  4h 46m 36.376s  UT
+rises 1986 January 1 Wednesday 22h 05m 52.968s  UT
+sets 1986 January 2 Thursday 11h 15m 32.953s  UT
+Visible hours 13.1611
+lon 0, lat 42
+local meridian transit 1986 January 2 Thursday  4h 46m 36.376s  UT
+rises 1986 January 1 Wednesday 22h 03m 39.949s  UT
+sets 1986 January 2 Thursday 11h 16m 50.527s  UT
+Visible hours 13.2196
+lon 0, lat 44
+local meridian transit 1986 January 2 Thursday  4h 46m 36.375s  UT
+rises 1986 January 1 Wednesday 22h 01m 17.842s  UT
+sets 1986 January 2 Thursday 11h 18m 12.934s  UT
+Visible hours 13.2820
+lon 0, lat 46
+local meridian transit 1986 January 2 Thursday  4h 46m 36.375s  UT
+rises 1986 January 1 Wednesday 21h 58m 45.274s  UT
+sets 1986 January 2 Thursday 11h 19m 40.870s  UT
+Visible hours 13.3488
+lon 0, lat 48
+local meridian transit 1986 January 2 Thursday  4h 46m 36.374s  UT
+rises 1986 January 1 Wednesday 21h 56m 00.601s  UT
+sets 1986 January 2 Thursday 11h 21m 15.158s  UT
+Visible hours 13.4207
+lon 0, lat 50
+local meridian transit 1986 January 2 Thursday  4h 46m 36.373s  UT
+rises 1986 January 1 Wednesday 21h 53m 01.834s  UT
+sets 1986 January 2 Thursday 11h 22m 56.781s  UT
+Visible hours 13.4986
+lon 0, lat 52
+local meridian transit 1986 January 2 Thursday  4h 46m 36.373s  UT
+rises 1986 January 1 Wednesday 21h 49m 46.538s  UT
+sets 1986 January 2 Thursday 11h 24m 46.919s  UT
+Visible hours 13.5834
+lon 0, lat 54
+local meridian transit 1986 January 2 Thursday  4h 46m 36.372s  UT
+rises 1986 January 1 Wednesday 21h 46m 11.704s  UT
+sets 1986 January 2 Thursday 11h 26m 47.016s  UT
+Visible hours 13.6765
+lon 0, lat 56
+local meridian transit 1986 January 2 Thursday  4h 46m 36.372s  UT
+rises 1986 January 1 Wednesday 21h 42m 13.555s  UT
+sets 1986 January 2 Thursday 11h 28m 58.839s  UT
+Visible hours 13.7792
+lon 0, lat 58
+local meridian transit 1986 January 2 Thursday  4h 46m 36.371s  UT
+rises 1986 January 1 Wednesday 21h 37m 47.286s  UT
+sets 1986 January 2 Thursday 11h 31m 24.591s  UT
+Visible hours 13.8937
+lon 0, lat 60
+local meridian transit 1986 January 2 Thursday  4h 46m 36.370s  UT
+rises 1986 January 1 Wednesday 21h 32m 46.672s  UT
+sets 1986 January 2 Thursday 11h 34m 07.050s  UT
+Visible hours 14.0223
+lon 0, lat 62
+local meridian transit 1986 January 2 Thursday  4h 46m 36.370s  UT
+rises 1986 January 1 Wednesday 21h 27m 03.496s  UT
+sets 1986 January 2 Thursday 11h 37m 09.775s  UT
+Visible hours 14.1684
+lon 0, lat 64
+local meridian transit 1986 January 2 Thursday  4h 46m 36.369s  UT
+rises 1986 January 1 Wednesday 21h 20m 26.649s  UT
+sets 1986 January 2 Thursday 11h 40m 37.400s  UT
+Visible hours 14.3363
+lon 0, lat 66
+local meridian transit 1986 January 2 Thursday  4h 46m 36.368s  UT
+rises 1986 January 1 Wednesday 21h 12m 40.693s  UT
+sets 1986 January 2 Thursday 11h 44m 36.084s  UT
+Visible hours 14.5321
+lon 0, lat 40
+local meridian transit 1986 January 6 Monday  8h 01m 03.420s  UT
+rises 1986 January 6 Monday  2h 50m 59.337s  UT
+sets 1986 January 6 Monday 13h 02m 23.057s  UT
+Visible hours 10.1899
+lon 0, lat 42
+local meridian transit 1986 January 6 Monday  8h 01m 03.420s  UT
+rises 1986 January 6 Monday  2h 55m 47.938s  UT
+sets 1986 January 6 Monday 12h 57m 00.762s  UT
+Visible hours 10.0202
+lon 0, lat 44
+local meridian transit 1986 January 6 Monday  8h 01m 03.419s  UT
+rises 1986 January 6 Monday  3h 00m 58.012s  UT
+sets 1986 January 6 Monday 12h 51m 15.514s  UT
+Visible hours 9.8382
+lon 0, lat 46
+local meridian transit 1986 January 6 Monday  8h 01m 03.418s  UT
+rises 1986 January 6 Monday  3h 06m 33.088s  UT
+sets 1986 January 6 Monday 12h 45m 03.587s  UT
+Visible hours 9.6418
+lon 0, lat 48
+local meridian transit 1986 January 6 Monday  8h 01m 03.418s  UT
+rises 1986 January 6 Monday  3h 12m 37.493s  UT
+sets 1986 January 6 Monday 12h 38m 20.427s  UT
+Visible hours 9.4286
+lon 0, lat 50
+local meridian transit 1986 January 6 Monday  8h 01m 03.417s  UT
+rises 1986 January 6 Monday  3h 19m 16.610s  UT
+sets 1986 January 6 Monday 12h 31m 00.389s  UT
+Visible hours 9.1955
+lon 0, lat 52
+local meridian transit 1986 January 6 Monday  8h 01m 03.417s  UT
+rises 1986 January 6 Monday  3h 26m 37.244s  UT
+sets 1986 January 6 Monday 12h 22m 56.364s  UT
+Visible hours 8.9386
+lon 0, lat 54
+local meridian transit 1986 January 6 Monday  8h 01m 03.416s  UT
+rises 1986 January 6 Monday  3h 34m 48.159s  UT
+sets 1986 January 6 Monday 12h 13m 59.228s  UT
+Visible hours 8.6531
+lon 0, lat 56
+local meridian transit 1986 January 6 Monday  8h 01m 03.415s  UT
+rises 1986 January 6 Monday  3h 44m 00.902s  UT
+sets 1986 January 6 Monday 12h 03m 57.007s  UT
+Visible hours 8.3323
+lon 0, lat 58
+local meridian transit 1986 January 6 Monday  8h 01m 03.415s  UT
+rises 1986 January 6 Monday  3h 54m 31.109s  UT
+sets 1986 January 6 Monday 11h 52m 33.557s  UT
+Visible hours 7.9673
+lon 0, lat 60
+local meridian transit 1986 January 6 Monday  8h 01m 03.414s  UT
+rises 1986 January 6 Monday  4h 06m 40.709s  UT
+sets 1986 January 6 Monday 11h 39m 26.331s  UT
+Visible hours 7.5460
+lon 0, lat 62
+local meridian transit 1986 January 6 Monday  8h 01m 03.413s  UT
+rises 1986 January 6 Monday  4h 21m 01.884s  UT
+sets 1986 January 6 Monday 11h 24m 02.389s  UT
+Visible hours 7.0501
+lon 0, lat 64
+local meridian transit 1986 January 6 Monday  8h 01m 03.412s  UT
+rises 1986 January 6 Monday  4h 38m 24.958s  UT
+sets 1986 January 6 Monday 11h 05m 30.467s  UT
+Visible hours 6.4515
+lon 0, lat 66
+local meridian transit 1986 January 6 Monday  8h 01m 03.412s  UT
+rises 1986 January 6 Monday  5h 00m 16.390s  UT
+sets 1986 January 6 Monday 10h 42m 22.906s  UT
+Visible hours 5.7018

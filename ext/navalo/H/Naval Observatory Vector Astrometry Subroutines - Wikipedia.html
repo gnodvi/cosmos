@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Naval Observatory Vector Astrometry Subroutines - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRequestId":"XkPcFgpAMFUAAHai4TwAAADJ","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Naval_Observatory_Vector_Astrometry_Subroutines","wgTitle":"Naval Observatory Vector Astrometry Subroutines","wgCurRevisionId":905206968,"wgRevisionId":905206968,"wgArticleId":18677318,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using deprecated image syntax","All stub articles","Astrometry","Astronomy software","Science software","Beta software",
+"United States Naval Observatory","Astronomy stubs","Computer library stubs"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Naval_Observatory_Vector_Astrometry_Subroutines","wgRelevantArticleId":18677318,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q17042610","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready",
+"user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"ready","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.toc.styles":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.startup","skins.vector.js","mediawiki.page.ready","mediawiki.toc","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents",
+"ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.tokens@tffin",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.toc.styles%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.0-wmf.18"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/a/a9/USNO_NOVAS_software_logo.png"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Naval_Observatory_Vector_Astrometry_Subroutines"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Naval_Observatory_Vector_Astrometry_Subroutines"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Naval_Observatory_Vector_Astrometry_Subroutines rootpage-Naval_Observatory_Vector_Astrometry_Subroutines skin-vector action-view">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+</div>
+
+	<h1 id="firstHeading" class="firstHeading" lang="en">Naval Observatory Vector Astrometry Subroutines</h1>
+	
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>
+		<div id="contentSub"></div>
+		
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#p-search">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div role="note" class="hatnote navigation-not-searchable">"NOVAS" redirects here. For other uses, see <a href="/wiki/Novas_(disambiguation)" class="mw-disambig" title="Novas (disambiguation)">novas (disambiguation)</a>.</div>
+<table class="infobox vevent" style="width:22em"><caption class="summary">NOVAS</caption><tbody><tr><td colspan="2" style="text-align:center"><a href="/wiki/File:USNO_NOVAS_software_logo.png" class="image" title="NOVAS logo"><img alt="NOVAS logo" src="//upload.wikimedia.org/wikipedia/en/a/a9/USNO_NOVAS_software_logo.png" decoding="async" width="186" height="61" data-file-width="186" data-file-height="61" /></a></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_developer" class="mw-redirect" title="Software developer">Developer(s)</a></th><td><a href="/wiki/United_States_Naval_Observatory" title="United States Naval Observatory">United States Naval Observatory</a></td></tr><tr style="display: none;"><td colspan="2" style="text-align:center"></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_release_life_cycle" title="Software release life cycle">Stable release</a></th><td><div style="margin:0px;">C3.1 (C version); F3.1 (Fortran version); Python Edition 3.1.1
+   /    March 31, 2011 (C); March 31, 2011 (FORTRAN); October 13, 2015 (Python)</div></td></tr><tr style="display:none"><td colspan="2">
+</td></tr><tr><th scope="row" style="white-space: nowrap;">Written in</th><td><a href="/wiki/C_programming_language" class="mw-redirect" title="C programming language">C</a>/<a href="/wiki/Fortran" title="Fortran">Fortran</a>/Python</td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Computing_platform" title="Computing platform">Platform</a></th><td><a href="/wiki/Cross-platform" class="mw-redirect" title="Cross-platform">Cross-platform</a> (distributed in <a href="/wiki/Source_code" title="Source code">source code</a> form)</td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_categories#Categorization_approaches" title="Software categories">Type</a></th><td><a href="/wiki/Astrometry" title="Astrometry">Astrometry</a></td></tr><tr><th scope="row" style="white-space: nowrap;">Website</th><td><span class="url"><a rel="nofollow" class="external text" href="http://aa.usno.navy.mil/software/novas/novas_info.php">aa<wbr />.usno<wbr />.navy<wbr />.mil<wbr />/software<wbr />/novas<wbr />/novas<wbr />_info<wbr />.php</a></span></td></tr></tbody></table>
+<p>The <b>Naval Observatory Vector Astrometry Software</b> (<b>NOVAS</b>) is a <a href="/wiki/Software_library" class="mw-redirect" title="Software library">software library</a> for <a href="/wiki/Astrometry" title="Astrometry">astrometry</a>-related <a href="/wiki/Numerical_analysis" title="Numerical analysis">numerical</a> computations. It is developed by the Astronomical Applications Department, <a href="/wiki/United_States_Naval_Observatory" title="United States Naval Observatory">United States Naval Observatory</a>. Currently, NOVAS has three different editions for <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Fortran" title="Fortran">Fortran</a>, and <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, respectively.
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Algorithms"><span class="tocnumber">1</span> <span class="toctext">Algorithms</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Structure"><span class="tocnumber">2</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Usage"><span class="tocnumber">3</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Current_status"><span class="tocnumber">4</span> <span class="toctext">Current status</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Algorithms">Algorithms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=1" title="Edit section: Algorithms">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The <a href="/wiki/Algorithm" title="Algorithm">algorithms</a> used by NOVAS are based on vector astrometry theories and the <a href="/wiki/IAU" class="mw-redirect" title="IAU">IAU</a> resolutions. Instead of using <a href="/wiki/Trigonometric" class="mw-redirect" title="Trigonometric">trigonometric</a> formulae from spherical astrometry, NOVAS uses the <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrix</a> and <a href="/wiki/Vector_(geometry)" class="mw-redirect" title="Vector (geometry)">vector</a> formulation which is more rigorous. This version implements the resolutions on <a href="/w/index.php?title=Astronomical_reference_systems&amp;action=edit&amp;redlink=1" class="new" title="Astronomical reference systems (page does not exist)">astronomical reference systems</a> and Earth rotation models passed at the IAU General Assemblies in 1997, 2000, and 2006. According to the Astronomical Applications Department, the algorithms used in NOVAS are identical to those used in the production of the US part of the <a href="/wiki/Astronomical_Almanac" title="Astronomical Almanac">Astronomical Almanac</a>.<sup id="cite_ref-novas_web_1-0" class="reference"><a href="#cite_note-novas_web-1">&#91;1&#93;</a></sup>
+</p><p>A detailed description of the algorithms can be found here: Kaplan, et al. (1989) <i>Astron. J.</i> <b>97</b>, 1197.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="Structure">Structure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=2" title="Edit section: Structure">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The NOVAS library provides three levels of <a href="/wiki/Subroutines" class="mw-redirect" title="Subroutines">subroutines</a> (functions): basic, utility, and supervisory.<sup id="cite_ref-novas_web_1-1" class="reference"><a href="#cite_note-novas_web-1">&#91;1&#93;</a></sup> Basic-level subroutines supply the values of fundamental variables, such as the <a href="/wiki/Nutation" title="Nutation">nutation</a> angles and the heliocentric positions of <a href="/wiki/Solar_system" class="mw-redirect" title="Solar system">solar system</a> bodies for specific <a href="/wiki/Epoch_(astronomy)" title="Epoch (astronomy)">epoches</a>. Utility-level subroutines perform <a href="/wiki/Transformation_(geometry)" class="mw-redirect" title="Transformation (geometry)">transformations</a>, such as those caused by <a href="/wiki/Precession" title="Precession">precession</a>, nutation and <a href="/wiki/Aberration_of_light" class="mw-redirect" title="Aberration of light">aberration</a>. Supervisory-level subroutines serve as interfaces to the basic and utility subroutines to compute the coordinates of <a href="/wiki/Star" title="Star">stars</a> or Solar System bodies for specific dates and times.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=3" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The NOVAS library can be <a href="/wiki/Linker_(computing)" title="Linker (computing)">linked</a> by programs that work with positions of <a href="/wiki/Celestial_bodies" class="mw-redirect" title="Celestial bodies">celestial bodies</a>. For example, "Pocket Stars", an astronomy software for <a href="/wiki/Smartphone" title="Smartphone">Smartphone</a> and <a href="/wiki/PDA" class="mw-redirect" title="PDA">PDA</a> platforms, used the NOVAS as its astrometry engine.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p><p>The <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> edition allows calling the NOVAS functions from Python. It is mostly feature complete with respect to the C edition, with a few exceptions,<sup id="cite_ref-novas_py_web_4-0" class="reference"><a href="#cite_note-novas_py_web-4">&#91;4&#93;</a></sup> and shares the C edition's API. The current edition uses Python's foreign function library, ctypes.
+</p>
+<h2><span class="mw-headline" id="Current_status">Current status</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=4" title="Edit section: Current status">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Future versions of the Python interface will add support for passing data via <a href="/wiki/NumPy" title="NumPy">NumPy</a> types (and therefore support vectorized operations), and present a more Pythonic interface.<sup id="cite_ref-novas_py_announcement_5-0" class="reference"><a href="#cite_note-novas_py_announcement-5">&#91;5&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<style data-mw-deduplicate="TemplateStyles:r936637989">.mw-parser-output .portal{border:solid #aaa 1px;padding:0}.mw-parser-output .portal.tleft{margin:0.5em 1em 0.5em 0}.mw-parser-output .portal.tright{margin:0.5em 0 0.5em 1em}.mw-parser-output .portal>ul{display:table;box-sizing:border-box;padding:0.1em;max-width:175px;background:#f9f9f9;font-size:85%;line-height:110%;font-style:italic;font-weight:bold}.mw-parser-output .portal>ul>li{display:table-row}.mw-parser-output .portal>ul>li>span:first-child{display:table-cell;padding:0.2em;vertical-align:middle;text-align:center}.mw-parser-output .portal>ul>li>span:last-child{display:table-cell;padding:0.2em 0.2em 0.2em 0.3em;vertical-align:middle}</style><div role="navigation" aria-label="Portals" class="noprint portal plainlist tright">
+<ul>
+<li><span><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/28px-Crab_Nebula.jpg" decoding="async" width="28" height="28" class="noviewer" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/42px-Crab_Nebula.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/56px-Crab_Nebula.jpg 2x" data-file-width="3864" data-file-height="3864" /></span><span><a href="/wiki/Portal:Astronomy" title="Portal:Astronomy">Astronomy portal</a></span></li></ul></div>
+<ul><li><a href="/wiki/United_States_Naval_Observatory" title="United States Naval Observatory">United States Naval Observatory</a></li>
+<li><a href="/wiki/Astrometry" title="Astrometry">Astrometry</a></li>
+<li><a href="/wiki/SOFA_(Astronomy)" class="mw-redirect" title="SOFA (Astronomy)">SOFA (Astronomy)</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.cloudmakers.eu/jnovas">jNOVAS</a> Java wrapper for NOVAS library</li>
+<li><a rel="nofollow" class="external text" href="https://pypi.python.org/pypi/novas/">Python edition of NOVAS on PyPI</a></li></ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit&amp;section=6" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-novas_web-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-novas_web_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-novas_web_1-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Kaplan, George H. <a rel="nofollow" class="external text" href="http://aa.usno.navy.mil/software/novas/novas_info.php">"NOVAS"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2015-07-16</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=NOVAS&amp;rft.au=Kaplan%2C+George+H&amp;rft_id=http%3A%2F%2Faa.usno.navy.mil%2Fsoftware%2Fnovas%2Fnovas_info.php&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANaval+Observatory+Vector+Astrometry+Subroutines" class="Z3988"></span><style data-mw-deduplicate="TemplateStyles:r935243608">.mw-parser-output cite.citation{font-style:inherit}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .id-lock-free a,.mw-parser-output .citation .cs1-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/9px-Lock-green.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .id-lock-limited a,.mw-parser-output .id-lock-registration a,.mw-parser-output .citation .cs1-lock-limited a,.mw-parser-output .citation .cs1-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lock-gray-alt-2.svg/9px-Lock-gray-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .id-lock-subscription a,.mw-parser-output .citation .cs1-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lock-red-alt-2.svg/9px-Lock-red-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/12px-Wikisource-logo.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:inherit;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-maint{display:none;color:#33aa33;margin-left:0.3em}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}</style></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><cite class="citation journal">Kaplan, George. H.;  et al. (April 1989). "Mean and apparent place computations in the new IAU system. III - Apparent, topocentric, and astrometric places of planets and stars". <i><a href="/wiki/Astronomical_Journal" class="mw-redirect" title="Astronomical Journal">Astron. J.</a></i> <b>97</b>: 1197–1210. <a href="/wiki/Bibcode" title="Bibcode">Bibcode</a>:<a rel="nofollow" class="external text" href="https://ui.adsabs.harvard.edu/abs/1989AJ.....97.1197K">1989AJ.....97.1197K</a>. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.1086%2F115063">10.1086/115063</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Astron.+J.&amp;rft.atitle=Mean+and+apparent+place+computations+in+the+new+IAU+system.+III+-+Apparent%2C+topocentric%2C+and+astrometric+places+of+planets+and+stars&amp;rft.volume=97&amp;rft.pages=1197-1210&amp;rft.date=1989-04&amp;rft_id=info%3Adoi%2F10.1086%2F115063&amp;rft_id=info%3Abibcode%2F1989AJ.....97.1197K&amp;rft.au=Kaplan%2C+George.+H.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANaval+Observatory+Vector+Astrometry+Subroutines" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"/></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><cite class="citation web">Jay Alan Borseth. <a rel="nofollow" class="external text" href="http://www.nomadelectronics.com/Products.aspx">"Pocket Stars Product Versions (PDA, SP, PC)"</a>. Nomad Electronics<span class="reference-accessdate">. Retrieved <span class="nowrap">2008-08-01</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Pocket+Stars+Product+Versions+%28PDA%2C+SP%2C+PC%29&amp;rft.pub=Nomad+Electronics&amp;rft.au=Jay+Alan+Borseth&amp;rft_id=http%3A%2F%2Fwww.nomadelectronics.com%2FProducts.aspx&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANaval+Observatory+Vector+Astrometry+Subroutines" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"/></span>
+</li>
+<li id="cite_note-novas_py_web-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-novas_py_web_4-0">^</a></b></span> <span class="reference-text"><cite class="citation web">Kaplan, George H. <a rel="nofollow" class="external text" href="http://aa.usno.navy.mil/software/novas/novas_py/novaspy_intro.php">"NOVAS - Python"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2016-01-16</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=NOVAS+-+Python&amp;rft.au=Kaplan%2C+George+H&amp;rft_id=http%3A%2F%2Faa.usno.navy.mil%2Fsoftware%2Fnovas%2Fnovas_py%2Fnovaspy_intro.php&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANaval+Observatory+Vector+Astrometry+Subroutines" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"/></span>
+</li>
+<li id="cite_note-novas_py_announcement-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-novas_py_announcement_5-0">^</a></b></span> <span class="reference-text"><cite class="citation web">Kaplan, George H. <a rel="nofollow" class="external text" href="http://aa.usno.navy.mil/software/novas/novas_py/novas.pdf">"Naval Observatory Vector AStrometry Software (NOVAS) Version 3.1, Introducing a Python Edition"</a> <span class="cs1-format">(PDF)</span><span class="reference-accessdate">. Retrieved <span class="nowrap">2016-01-16</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Naval+Observatory+Vector+AStrometry+Software+%28NOVAS%29+Version+3.1%2C+Introducing+a+Python+Edition&amp;rft.au=Kaplan%2C+George+H&amp;rft_id=http%3A%2F%2Faa.usno.navy.mil%2Fsoftware%2Fnovas%2Fnovas_py%2Fnovas.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANaval+Observatory+Vector+Astrometry+Subroutines" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"/></span>
+</li>
+</ol></div></div>
+<p><br />
+</p>
+<table class="metadata plainlinks stub" role="presentation" style="background:transparent"><tbody><tr><td><a href="/wiki/File:Planet_-_The_Noun_Project.svg" class="image"><img alt="Stub icon" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/22/Planet_-_The_Noun_Project.svg/40px-Planet_-_The_Noun_Project.svg.png" decoding="async" width="40" height="27" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/22/Planet_-_The_Noun_Project.svg/60px-Planet_-_The_Noun_Project.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/22/Planet_-_The_Noun_Project.svg/80px-Planet_-_The_Noun_Project.svg.png 2x" data-file-width="512" data-file-height="342" /></a></td><td><i>This <a href="/wiki/Astronomy" title="Astronomy">astronomy</a>-related article is a <a href="/wiki/Wikipedia:Stub" title="Wikipedia:Stub">stub</a>. You can help Wikipedia by <a class="external text" href="https://en.wikipedia.org/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit">expanding it</a>.</i><div class="plainlinks hlist navbar mini" style="position: absolute; right: 15px; display: none;"><ul><li class="nv-view"><a href="/wiki/Template:Astronomy-stub" title="Template:Astronomy-stub"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Astronomy-stub" title="Template talk:Astronomy-stub"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Astronomy-stub&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<table class="metadata plainlinks stub" role="presentation" style="background:transparent"><tbody><tr><td><a href="/wiki/File:Software_spanner.png" class="image"><img alt="Stub icon" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/82/Software_spanner.png/39px-Software_spanner.png" decoding="async" width="39" height="30" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/82/Software_spanner.png/59px-Software_spanner.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/82/Software_spanner.png/78px-Software_spanner.png 2x" data-file-width="239" data-file-height="184" /></a></td><td><i>This <a href="/wiki/Library_(computing)" title="Library (computing)">computer-library</a>-related article is a <a href="/wiki/Wikipedia:Stub" title="Wikipedia:Stub">stub</a>. You can help Wikipedia by <a class="external text" href="https://en.wikipedia.org/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit">expanding it</a>.</i><div class="plainlinks hlist navbar mini" style="position: absolute; right: 15px; display: none;"><ul><li class="nv-view"><a href="/wiki/Template:Compu-library-stub" title="Template:Compu-library-stub"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Compu-library-stub" title="Template talk:Compu-library-stub"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Compu-library-stub&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Parsed by mw1245
+Cached time: 20200202234033
+Cache expiry: 2592000
+Dynamic content: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.340 seconds
+Real time usage: 0.440 seconds
+Preprocessor visited node count: 814/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 21869/2097152 bytes
+Template argument size: 1641/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 6/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 16563/5000000 bytes
+Number of Wikibase entities loaded: 3/400
+Lua time usage: 0.177/10.000 seconds
+Lua memory usage: 3.64 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  378.189      1 -total
+ 45.03%  170.299      1 Template:Reflist
+ 30.57%  115.627      2 Template:Infobox
+ 28.31%  107.053      4 Template:Cite_web
+ 27.03%  102.207      1 Template:Infobox_software
+ 12.97%   49.051      1 Template:Redirect
+ 12.03%   45.497      1 Template:Cite_journal
+  8.18%   30.954      1 Template:Portal
+  7.17%   27.117      1 Template:Infobox_software/simple
+  3.85%   14.543      1 Template:URL
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:18677318-0!canonical and timestamp 20200202234033 and revision id 905206968
+ -->
+</div><noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>
+		<div class="printfooter">Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;oldid=905206968">https://en.wikipedia.org/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;oldid=905206968</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Astrometry" title="Category:Astrometry">Astrometry</a></li><li><a href="/wiki/Category:Astronomy_software" title="Category:Astronomy software">Astronomy software</a></li><li><a href="/wiki/Category:Science_software" title="Category:Science software">Science software</a></li><li><a href="/wiki/Category:Beta_software" title="Category:Beta software">Beta software</a></li><li><a href="/wiki/Category:United_States_Naval_Observatory" title="Category:United States Naval Observatory">United States Naval Observatory</a></li><li><a href="/wiki/Category:Astronomy_stubs" title="Category:Astronomy stubs">Astronomy stubs</a></li><li><a href="/wiki/Category:Computer_library_stubs" title="Category:Computer library stubs">Computer library stubs</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Pages_using_deprecated_image_syntax" title="Category:Pages using deprecated image syntax">Pages using deprecated image syntax</a></li><li><a href="/wiki/Category:All_stub_articles" title="Category:All stub articles">All stub articles</a></li></ul></div></div>
+		<div class="visualClear"></div>
+		
+	</div>
+</div>
+<div id='mw-data-after-content'>
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+    <h2>Navigation menu</h2>
+    <div id="mw-head">
+        
+<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul >
+		
+		<li id="pt-anonuserpage">Not logged in</li>
+		<li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Naval+Observatory+Vector+Astrometry+Subroutines" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Naval+Observatory+Vector+Astrometry+Subroutines" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>
+	</ul>
+</div>
+
+        <div id="left-navigation">
+            <div id="p-namespaces" role="navigation" class="vectorTabs " aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul >
+		<li id="ca-nstab-main" class="selected"><a href="/wiki/Naval_Observatory_Vector_Astrometry_Subroutines" title="View the content page [c]" accesskey="c">Article</a></li><li id="ca-talk"><a href="/wiki/Talk:Naval_Observatory_Vector_Astrometry_Subroutines" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Talk</a></li>
+	</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<ul class="menu" >
+		
+	</ul>
+</div>
+
+        </div>
+        <div id="right-navigation">
+            <div id="p-views" role="navigation" class="vectorTabs " aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul >
+		<li id="ca-view" class="collapsible selected"><a href="/wiki/Naval_Observatory_Vector_Astrometry_Subroutines">Read</a></li><li id="ca-edit" class="collapsible"><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></li><li id="ca-history" class="collapsible"><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li>
+	</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<ul class="menu" >
+		
+	</ul>
+</div>
+<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" value="Special:Search" name="title"/>
+			<input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+        </div>
+    </div>
+    <div id="mw-panel">
+        <div id="p-logo" role="banner">
+            <a  title="Visit the main page" class="mw-wiki-logo" href="/wiki/Main_Page"></a>
+        </div>
+        
+<div class="portal" role="navigation" id="p-navigation"  aria-labelledby="p-navigation-label">
+	<h3  id="p-navigation-label">
+		Navigation
+	</h3>
+	<div class="body">
+		<ul><li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Wikipedia:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li></ul>
+		
+	</div>
+</div>
+
+<div class="portal" role="navigation" id="p-interaction"  aria-labelledby="p-interaction-label">
+	<h3  id="p-interaction-label">
+		Interaction
+	</h3>
+	<div class="body">
+		<ul><li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li></ul>
+		
+	</div>
+</div>
+
+<div class="portal" role="navigation" id="p-tb"  aria-labelledby="p-tb-label">
+	<h3  id="p-tb-label">
+		Tools
+	</h3>
+	<div class="body">
+		<ul><li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Naval_Observatory_Vector_Astrometry_Subroutines" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Naval_Observatory_Vector_Astrometry_Subroutines" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;oldid=905206968" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q17042610" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Naval_Observatory_Vector_Astrometry_Subroutines&amp;id=905206968" title="Information on how to cite this page">Cite this page</a></li></ul>
+		
+	</div>
+</div>
+
+<div class="portal" role="navigation" id="p-coll-print_export"  aria-labelledby="p-coll-print_export-label">
+	<h3  id="p-coll-print_export-label">
+		Print/export
+	</h3>
+	<div class="body">
+		<ul><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Naval+Observatory+Vector+Astrometry+Subroutines">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:ElectronPdf&amp;page=Naval+Observatory+Vector+Astrometry+Subroutines&amp;action=show-download-screen">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>
+		
+	</div>
+</div>
+
+<div class="portal" role="navigation" id="p-lang"  aria-labelledby="p-lang-label">
+	<h3  id="p-lang-label">
+		Languages
+	</h3>
+	<div class="body">
+		<ul></ul>
+		<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q17042610#sitelinks-wikipedia" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>
+	</div>
+</div>
+
+    </div>
+</div>
+
+
+<div id="footer" role="contentinfo" >
+	<ul id="footer-info" class="">
+		<li id="footer-info-lastmod"> This page was last edited on 7 July 2019, at 16:26<span class="anonymous-show">&#160;(UTC)</span>.</li>
+		<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//foundation.wikimedia.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//foundation.wikimedia.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+	</ul>
+	<ul id="footer-places" class="">
+		<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+		<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+		<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/v2/#/en.wikipedia.org">Statistics</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+		<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Naval_Observatory_Vector_Astrometry_Subroutines&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</div>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.340","walltime":"0.440","ppvisitednodes":{"value":814,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":21869,"limit":2097152},"templateargumentsize":{"value":1641,"limit":2097152},"expansiondepth":{"value":18,"limit":40},"expensivefunctioncount":{"value":6,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":16563,"limit":5000000},"entityaccesscount":{"value":3,"limit":400},"timingprofile":["100.00%  378.189      1 -total"," 45.03%  170.299      1 Template:Reflist"," 30.57%  115.627      2 Template:Infobox"," 28.31%  107.053      4 Template:Cite_web"," 27.03%  102.207      1 Template:Infobox_software"," 12.97%   49.051      1 Template:Redirect"," 12.03%   45.497      1 Template:Cite_journal","  8.18%   30.954      1 Template:Portal","  7.17%   27.117      1 Template:Infobox_software/simple","  3.85%   14.543      1 Template:URL"]},"scribunto":{"limitreport-timeusage":{"value":"0.177","limit":"10.000"},"limitreport-memusage":{"value":3812281,"limit":52428800}},"cachereport":{"origin":"mw1245","timestamp":"20200202234033","ttl":2592000,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Naval Observatory Vector Astrometry Subroutines","url":"https:\/\/en.wikipedia.org\/wiki\/Naval_Observatory_Vector_Astrometry_Subroutines","sameAs":"http:\/\/www.wikidata.org\/entity\/Q17042610","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q17042610","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2008-08-01T13:32:21Z","dateModified":"2019-07-07T16:26:21Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/en\/a\/a9\/USNO_NOVAS_software_logo.png"}</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":123,"wgHostname":"mw1250"});});</script></body></html>

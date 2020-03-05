@@ -1,0 +1,1032 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-page="">
+<head>
+    <meta charset="UTF-8">
+    <title>User manual · IAA RAS</title>
+
+    
+<link rel="stylesheet" href="/static/build/main.2c393bfb4ddc8c88b6b3.css">
+
+
+    
+<script src="/static/build/main.a3eb42c44bd56420bd96.js"
+        type="text/javascript">
+    </script>
+
+
+
+    <meta name="theme-color" content="#405a82">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/static/css/ie8.css">
+    <script src="/static/js/respond.js"></script>
+    <![endif]-->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter49156807 = new Ya.Metrika2({
+                        id:49156807,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks2");
+    </script>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/49156807"
+                 style="position:absolute; left:-9999px;"
+                 alt="" />
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script>
+        function getAllUrlParams(url) {
+            var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+            var obj = {};
+            if (!queryString) {
+                return obj;
+            }
+            queryString = queryString.split('#')[0];
+            var arr = queryString.split('&');
+
+            for (var i = 0; i < arr.length; i++) {
+                var a = arr[i].split('=');
+                var paramNum = undefined;
+                var paramName = a[0].replace(/\[\d*\]/, function(v) {
+                    paramNum = v.slice(1,-1);
+                    return '';
+                });
+
+                var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+
+                paramName = paramName.toLowerCase();
+                paramValue = paramValue.toLowerCase();
+
+                if (obj[paramName]) {
+                    if (typeof obj[paramName] === 'string') {
+                        obj[paramName] = [obj[paramName]];
+                    }
+                    if (typeof paramNum === 'undefined') {
+                        obj[paramName].push(paramValue);
+                    }
+                    else {
+                        obj[paramName][paramNum] = paramValue;
+                    }
+                }
+                else {
+                    obj[paramName] = paramValue;
+                }
+            }
+            return obj;
+        }
+    </script>
+
+    <script type="text/javascript" src="/static/js/highslide/highslide-with-gallery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/js/highslide/highslide.css">
+    <script type="text/javascript" src="/static/js/highslide/highslide-tuning.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/js/highslide/highslide-styles.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+        </script>
+
+    <style>
+        .highslide-viewport-size {position: fixed; width: 100%; height: 100%; left: 0; top: 0}
+        @media screen and (max-width: 819.999px) {
+            #header-container {
+                margin-bottom: 30px;
+            }
+            .content {
+                margin-top: 30px;
+            }
+        }
+    </style>
+
+    <script>
+        function getLangPrefix() {
+            if (document.documentElement.lang === 'ru') {
+                return '';
+            }
+            return '/en';
+        }
+        function resizeIframe(id) {
+            var iframe = document.getElementById(id);
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+        function propertySupported(property) {
+            return property in document.body.style;
+        }
+        function makeLoader() {
+            var container = document.createElement('div');
+            var loader = document.createElement('div');
+            container.classList.add('loader-container');
+            loader.classList.add('loader');
+            for (var i = 1; i <= 4; i++) {
+                var dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.classList.add('dot_' + i);
+                loader.appendChild(dot);
+            }
+            container.appendChild(loader);
+            return container;
+        }
+        function renderPapers(id, xhttp) {
+            var papersContainer = document.getElementById(id);
+            var loader = makeLoader();
+            papersContainer.appendChild(loader);
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    papersContainer.innerHTML = xhttp.responseText;
+                    document.querySelector('.content').style.height = '';
+                }
+            };
+        }
+        function getPapers(elementId, search) {
+            var xhttp = new XMLHttpRequest();
+            renderPapers(elementId, xhttp);
+            var mainUrl = '/library/search/';
+            var url = getLangPrefix() + mainUrl + '?' + search + '&onlyPapers=1';
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+        function getPapersByIds(elementId, ids) {
+            var xhttp = new XMLHttpRequest();
+            renderPapers(elementId, xhttp);
+            var argString = ids.map(function(id) {
+                return 'ids=' + id;
+            }).join('&');
+            var mainUrl = '/library/get_papers_by_ids/';
+            xhttp.open("GET", getLangPrefix() + mainUrl + '?' + argString);
+            xhttp.send();
+        }
+        function setSliderSize(ratio) {
+            var slider = document.getElementById('image');
+        }
+        function resetMainMenu() {
+            var fixed = $('.main-menu-wrap').css('position') == 'fixed';
+            $('.main-menu *').attr('style','');
+            if (fixed) {
+                $('.main-menu .menu-item').not('.active').siblings().removeClass('rotated');
+            } else {
+                $('.expand-button.rotated').removeClass('rotated')
+            }
+            $('.main-menu .section-title').not('.active').children().removeClass('rotated');
+            $('.submenu-wrap.open').removeClass('open');
+            var li = $('.main-menu .menu-item-wrap.active').parent();
+            li.find('.submenu-wrap').addClass('pre-expanded');
+            if (fixed) {
+                li.find('.submenu-wrap.pre-expanded').addClass('open');
+                li.find('.expand-button').addClass('rotated');
+            }
+            li.find('.section-title.active').parent().addClass('pre-expanded');
+            $('.section.pre-expanded').find('.expand-submenu-section').addClass('rotated');
+        }
+        function leftMenu(selector) {
+            this.config = function() {
+                this.menu = document.querySelector(selector);
+                this.buttonWrap = document.querySelector('.show-toc-wrap');
+                this.height = function() {
+                    return this.menu.offsetHeight;
+                };
+                this.outLeft = '-300px';
+                this.slidesFromLeft = function() {
+                    return $(this.buttonWrap).css('display') != 'none';
+                };
+                this.isFixed = function () {
+                    return $(this.menu).hasClass('fixed');
+                };
+                this.shouldBeFixed = function() {
+                    var slides = this.slidesFromLeft();
+                    var top = $(document).scrollTop();
+                    var footer = document.querySelector('.footer-wrap');
+                    var hdrHeight = 0;
+                    if (!slides) {
+                        var enoughSpace = window.innerHeight - footer.offsetHeight > this.height();
+                        hdrHeight = headerHeight();
+                        return top >= hdrHeight && enoughSpace;
+                    } else {
+                        hdrHeight = document.getElementById('header').offsetHeight;
+                        return top >= hdrHeight;
+                    }
+                };
+            };
+            this.positionTop = function() {
+                if (this.shouldBeFixed()) {
+                    $(this.menu).addClass('fixed');
+                    if (this.slidesFromLeft()) {
+                        $(this.buttonWrap).addClass('fixed');
+                    }
+                } else {
+                    $(this.menu).removeClass('fixed');
+                    $(this.buttonWrap).removeClass('fixed');
+                }
+
+            };
+            this.positionLeft = function() {
+                if (this.isFixed() && !this.slidesFromLeft()) {
+                    var left = $(document).scrollLeft();
+                    if (left > 0) {
+                        this.menu.style.left = -left + 'px';
+                    } else if (left == 0) {
+                        this.menu.style.left = '';
+                    }
+                } else {
+                    this.menu.style.left = '';
+                }
+            };
+            this.hide = function() {
+                this.menu.style.left = this.outLeft;
+            };
+            this.show = function() {
+                this.menu.style.left = 0;
+            };
+            this.reset = function() {
+                $(this.menu).removeClass('fixed');
+                $(this.buttonWrap).removeClass('fixed');
+                this.positionTop();
+                this.positionLeft();
+            };
+            this.bindEvents = function() {
+                var obj = this;
+                var outLeft = this.outLeft;
+                window.addEventListener('scroll', function() {
+                    obj.positionTop();
+                    obj.positionLeft();
+                });
+                this.buttonWrap.addEventListener('click', function(e) {
+                    if (e.target !== e.currentTarget) {
+                        if (obj.menu.style.left == outLeft || obj.menu.style.left == '') {
+                            obj.show();
+                        } else {
+                            obj.hide();
+                        }
+                    }
+                })
+            };
+            this.init = function() {
+                this.config();
+                this.positionTop();
+                this.positionLeft();
+                this.bindEvents();
+            }
+        }
+        if (!String.prototype.startsWith) {
+            String.prototype.startsWith = function(searchString, position){
+                return this.substr(position || 0, searchString.length) === searchString;
+            };
+        }
+        function headerHeight() {
+            var height;
+            if ($('.main-menu-wrap').css('position') !== 'absolute') {
+                height = $('#header').height();
+            } else {
+                height =  $('#header').height() + $('.main-menu-wrap').height();
+            }
+            if ($('.show-toc-wrap').css('display') !== 'none') {
+                height += $('.show-toc-wrap').height();
+            }
+            return height;
+        }
+        function adjustFooterSpacing() {
+            var px = 20;
+            if (window.contentBottomPadding === false) {
+                px = 0;
+            }
+            $('.content').css('padding-bottom', $('.footer-wrap').height() + px);
+        }
+
+        function initSearch() {
+
+            var form = document.querySelector('.search-wrap');
+            var input = form.querySelector('input');
+            var button = form.querySelector('.submit');
+            var liveList = form.querySelector('.live-results');
+            var delayTimer;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var activeLink = liveList.querySelector('li.active');
+                if (activeLink === null) {
+                    if (input.value.trim() != '') {
+                        this.submit();
+                    }
+                } else {
+                    window.location = activeLink.childNodes[0].href;
+                }
+            });
+
+            button.addEventListener('click', function () {
+                if (input.value.trim() != '') {
+                    form.submit();
+                } else {
+                    window.setTimeout(function () {
+                        input.focus();
+                    }, 0);
+
+                }
+            });
+
+            input.addEventListener('input', function() {
+                clearTimeout(delayTimer);
+                delayTimer = setTimeout(function() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState === 4 && xhttp.status === 200) {
+                        var results = JSON.parse(xhttp.responseText);
+                        var html = '';
+                        results.forEach(function (item) {
+                            html += '<li><a href = "/' + item[0] + '">' + item[1] + '</a></li>'
+                        });
+                        liveList.innerHTML = html;
+                    }
+                };
+                xhttp.open("POST", "/search/", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("q=" + input.value);
+                }, 300);
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.keyCode === 27) {
+                    input.blur();
+                    return;
+                }
+                if (e.keyCode !== 38 && e.keyCode !== 40) return;
+                var links = liveList.childNodes;
+                var activeLink = liveList.querySelector('li.active');
+                var index = Array.prototype.indexOf.call(links, activeLink);
+                if (e.keyCode === 38) {
+                    if (index > 0) {
+                        $(links[index--]).removeClass('active');
+                        $(links[index]).addClass('active');
+                    } else if (index === 0) {
+                        $(links[index]).removeClass('active');
+                    }
+                } else if (e.keyCode === 40) {
+                    if (index === -1) {
+                        $(links[0]).addClass('active');
+                    } else if (index < links.length - 1) {
+                        $(links[index++]).removeClass('active');
+                        $(links[index]).addClass('active');
+                    }
+                }
+
+            });
+
+            $(liveList).on('mousedown', 'a', function () {
+                window.location = this.href;
+            });
+        }
+
+        $(window).on('load', adjustFooterSpacing);
+        $(window).on('resize', adjustFooterSpacing);
+
+        var timer;
+        var resizeTimer;
+
+        $(function() {
+
+            if (!(propertySupported('flex') || propertySupported('-ms-flex') ||
+                  propertySupported('-webkit-flex') || propertySupported('-webkit-flex') ||
+                  propertySupported('-webkit-box-flex'))) {
+                document.getElementById('header').className += ' noflex';
+            }
+
+            var width = window.innerWidth;
+            var menu = document.querySelector('.left-menu');
+            var urlParams = getAllUrlParams();
+
+            initSearch();
+
+            if (menu) {
+                var lMenu = new leftMenu('.left-menu');
+                lMenu.init();
+            }
+
+
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    var midWidth = 820;
+                    if ((window.innerWidth >= midWidth && width < midWidth) ||
+                        (window.innerWidth < midWidth && width >= midWidth) ) {
+                        resetMainMenu();
+                        if (lMenu) {
+                            lMenu.reset();
+                        }
+                        width = window.innerWidth;
+                    }
+                }, 50);
+            });
+
+
+            $('.main-menu li').on('click', '.menu-item-wrap .expand-button', function(e) {
+                var item = $(this);
+                var menu = item.parent().parent().find('.submenu-wrap');
+                var open = menu.hasClass('open');
+                var fixed = $('.main-menu-wrap').css('position') === 'fixed';
+                if (!fixed) {
+                    $('.menu-item-wrap .expand-button.rotated').not(item).removeClass('rotated');
+                    $('.main-menu .submenu-wrap.open').not(menu).removeClass('open').fadeToggle(200);
+                }
+                item.toggleClass('rotated');
+                if (!fixed) {
+                    menu.toggleClass('open').fadeToggle(200);
+                } else {
+                    menu.toggleClass('open').slideToggle(500);
+                }
+            });
+
+            $('.main-menu .section').on('click', '.expand-submenu-section', function(e) {
+                e.preventDefault();
+                var rows =  $(this).parents('.section').find('.section-element');
+                if (rows.css('display') === 'none') {
+                    $(this).addClass('rotated');
+                    rows.slideToggle(200, function() {
+                        $(this).css('display','block');
+                    });
+                } else {
+                    $(this).removeClass('rotated');
+                    rows.slideToggle(200);
+                }
+            });
+            $('.expand-block-button').on('click', function() {
+                if ($(this).parent().css('max-height') === '1000px') {
+                    $(this).removeClass('rotated');
+                    $(this).parent().css('max-height', '52px');
+                } else {
+                    $(this).addClass('rotated');
+                    $(this).parent().css('max-height', '1000px');
+                }
+            });
+
+            $('a').each(function() {
+                if (!$(this).parent().hasClass('lang-wrap')) {
+                    var href = this.getAttribute('href');
+                    if (window.location.pathname.indexOf(href + '/') === 0 || href === window.location.pathname){
+                        $(this).parents('.submenu').siblings('.menu-item-wrap').addClass('active');
+                        $(this).parents('.menu-item-wrap').addClass('active');
+                        $(this).addClass("active");
+                        if (window.location.pathname === href || window.location.pathname === href + '/') {
+                            var aclass = $(this).attr('class');
+                            var atext = $(this).html();
+                            $(this).replaceWith('<span class="' + aclass + ' current-page">' + atext + '</span>');
+                        }
+                    }
+                }
+
+                var linkPath = this.pathname;
+                if (!urlParams.ref || !linkPath.startsWith('/') || this.hostname !== window.location.hostname)
+                    return;
+                if (this.hash) return;
+                var ignoredLinks = ['/static', '/media', '/html', '/library', '/en/library'];
+                for (var i = 0; i < ignoredLinks.length; i++) {
+                    if (linkPath.startsWith(ignoredLinks[i])) {
+                        return;
+                    }
+                }
+                this.href += '?ref=' + urlParams.ref;
+            });
+
+            $('.main-menu-hamburger').on('click', function() {
+                $('.main-menu-wrap').animate({ right: 0 });
+            });
+
+            $(window).click(function(e) {
+                var menuWrap = document.querySelector('.main-menu-wrap');
+                var style = getComputedStyle(menuWrap);
+                var slideRight = style['position'] === 'fixed';
+                var rotatedButtons = menuWrap.querySelectorAll('.expand-button.rotated');
+                if (rotatedButtons.length > 0 && !slideRight) {
+                    e.preventDefault();
+                    [].forEach.call(rotatedButtons, function(button) {
+                        button.click();
+                    });
+                }
+                if (slideRight && style['right'] !== '-350px') {
+                    e.preventDefault();
+                    $(menuWrap).animate({right: -350});
+                }
+            });
+            $('.main-menu-wrap, .main-menu-hamburger').click(function (e) {
+                e.stopPropagation();
+            });
+            resetMainMenu();
+        })
+
+    </script>
+</head>
+<body>
+<div class="body-wrap">
+    <div id="header-container">
+        <div id="header">
+            ﻿
+
+
+<a href="/en" class="logo logo-en"></a>
+<!--[if lte IE 8]>
+<a href="/" class="logo-ie8">
+    <img height="55" src="/static/img/iaa_logo.png">
+</a>
+<![endif]-->
+
+<div class="lang-wrap">
+    <a class="lang "  href="/dept/ephemeris/epm" >RU</a>
+    <span>/</span>
+    <a class="lang active" >EN</a>
+</div>
+
+<form class="search-wrap" method="get" action="/search">
+    <input class="no-style" type="text" name="q" placeholder="Search" autocomplete="off">
+    <i class="fa fa-search submit" aria-hidden="true"></i>
+    <ul class="live-results"></ul>
+</form>
+<div class="main-menu-wrap">
+<ul class="main-menu noselect">
+    <li>
+        
+    <div class="menu-item-wrap ">
+        <a href="/en/about" class="menu-item">About</a>
+        <div class="expand-button"></div>
+    </div>
+        <div class="submenu-wrap">
+            <div class="submenu">
+                <div class="section">
+                            <a href="/en/about/management"
+           class="section-element">
+            Management
+        </a>
+
+                            <a href="/en/about/scientific-board"
+           class="section-element">
+            Scientific Board
+        </a>
+
+                    
+                    
+                    <a href="/en/about/dissertational-board/" class="section-element">Dissertational Board</a>
+                            <a href="/en/library"
+           class="section-element">
+            Papers
+        </a>
+
+                    
+                            <a href="/en/about/medal"
+           class="section-element">
+            IAA RAS Medal
+        </a>
+
+                    
+                    
+                    
+                            <a href="/en/about/contacts"
+           class="section-element">
+            Contacts
+        </a>
+
+                </div>
+                <div class="section section-expanding">
+                            <a href="/en/about/issues"
+           class="section-title">
+            Issues
+                <span class="expand-submenu-section expand-section-inline"></span>
+        </a>
+
+                            <a href="/en/about/issues/yearbook"
+           class="section-element">
+            Astronomical Yearbook
+        </a>
+
+                            <a href="/en/about/issues/nautical-yearbook"
+           class="section-element">
+            Nautical Astronomical Yearbook
+        </a>
+
+                            <a href="/en/about/issues/nautical-almanac"
+           class="section-element">
+            Nautical Astronomical Almanac
+        </a>
+
+                            <a href="/en/about/issues/emp"
+           class="section-element">
+            Ephemerides of Minor Planets
+        </a>
+
+                            <a href="/en/about/issues/transactions"
+           class="section-element">
+            Transactions of the IAA RAS
+        </a>
+
+                    
+                    
+                            <a href="/en/about/issues/proceedings"
+           class="section-element">
+            Proceedings
+        </a>
+
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        
+    <div class="menu-item-wrap  no-arrow ">
+        <a href="/en/dept" class="menu-item">Departments</a>
+        <div class="expand-button"></div>
+    </div>
+    </li>
+    <li>
+        
+    <div class="menu-item-wrap  no-arrow ">
+        <a href="/en/quasar" class="menu-item">Quasar VLBI</a>
+        <div class="expand-button"></div>
+    </div>
+    </li>
+    <li>
+        
+    <div class="menu-item-wrap ">
+        <a href="/en/observations" class="menu-item">Observations</a>
+        <div class="expand-button"></div>
+    </div>
+		<div class="submenu-wrap">
+            <div class="submenu">
+                <div class="section">
+                    <a href="/en/observations/echo/" class="section-element">Radar observations of Near-Earth Objects</a>
+					<a href="/en/observations/sc/" class="section-element">Radio observations of Spacecrafts</a>
+					<a href="/en/observations/weather/" class="section-element">Weather at observatories</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    
+    <li>
+        
+    <div class="menu-item-wrap  no-arrow ">
+        <a href="/en/meetings" class="menu-item">Meetings</a>
+        <div class="expand-button"></div>
+    </div>
+    </li>
+</ul>
+</div>
+<i class="fa fa-bars main-menu-hamburger" aria-hidden="true"></i>
+
+
+        </div>
+    <div class="show-toc-wrap">
+        <div class="show-toc">
+            <i class="fa fa-list" aria-hidden="true"></i>Sections
+        </div>
+    </div>
+    </div>
+    <div class="content">
+    <div class="left-menu">
+        <ul><li><a href="/en/dept/">Departments</a></li><ul><li><a href="/en/dept/ephemeris/">Laboratory of Ephemeris Astronomy</a></li><ul><li><a href="/en/dept/ephemeris/epm/">EPM</a></li><ul><li><a href="/en/dept/ephemeris/epm/2015">EPM2015</a></li><ul></ul><li><a href="/en/dept/ephemeris/epm/2017">EPM2017 and EPM2017H</a></li><ul></ul><li class="active"><a href="/en/dept/ephemeris/epm/manual">User manual</a></li><ul></ul></ul></ul></ul></ul>
+    </div>
+<div class="page-content">
+        <h1>EPM user manual</h1>
+<h2>Introduction</h2>
+<p>This manual is for anybody who wants to use EPM (Ephemerides of Planets and
+Moon) for any purpose in their work. EPM are available through many ways that
+will suit different needs.</p>
+<p>EPM contain the following data for the interval of 400+ years:</p>
+<ul>
+<li>Barycentric positions and velocities of Sun, planets, three biggest asteroids
+  (Ceres, Pallas, Vesta) and four TNO (Eris, Haumea, Makemake, Sedna);</li>
+<li>Geocentric position and velocity of the Moon;</li>
+<li>Three Euler angles of lunar physical libration (phi, theta, psi) and their
+  rates;</li>
+<li>TT-TDB difference</li>
+</ul>
+<p>All the data is stored in the TDB time scale as Chebyshev polynomials on equal
+time intervals. There are multiple tools, described in further sections, that
+allow users to obtain positions, velocities, libration angles and their rates,
+and TT-TDB from ephemeris files.</p>
+<p>New users, please see Sections 1 or 2. Users who have previously set up their
+software to access ephemeris files can refer to Sections 3-7 to find suitable
+options.</p>
+<h2>Web access</h2>
+<p>The <a href="../../online/">Online Ephemeris Service of IAA RAS</a> is an
+interactive tool to obtain ephemeris data online. It provides not only
+rectangular positions of planets, but has plenty of options to view the
+coordinates in various reference systems, rectangular or spherical, relative to
+a specific observer, etc.</p>
+<p>There is also an option to switch between EPM2008, EPM2011/m, EPM2015, EPM2017,
+or selected versions of DE and INPOP ephemeris.</p>
+<p>“Show results in a new window” button gives the user a URL that can be reused
+(manually or programmatically from other software) to obtain the chosen
+ephemeris data again.</p>
+<h2>Access to SPICE files from C/C++, Fortran, Python, MATLAB, or IDL</h2>
+<p>For users who need to access EPM offline, the recommended way is to download the
+ephemeris files for the latest version of EPM provided in the formats of the
+SPICE toolkit. For EPM2017, the files can be found at
+<a href="ftp://ftp.iaaras.ru/pub/epm/EPM2017/SPICE/">ftp://ftp.iaaras.ru/pub/epm/EPM2017/SPICE/</a>.</p>
+<p>A short description of the files:</p>
+<ul>
+<li><code>epm&lt;VERSION&gt;.bsp</code>: binary file that contains ephemeris of celestial bodies and
+  TT-TDB (for EPM2011/m, there is a separate file for TT-TDB).</li>
+<li><code>moonlibr_epm&lt;VERSION&gt;.bpc</code>: binary file that contains lunar physical libration
+  angles.</li>
+<li><code>moonlibr_epm&lt;VERSION&gt;.tf</code>: ancillary text file that provides the description of
+  the lunar frame. Can be loaded into the SPICE toolkit, though not necessarily.</li>
+<li><code>epm&lt;VERSION&gt;.tpc</code>: ancillary text file that provides the values of selected
+  constants used during building of ephemerides (masses of celestial bodies
+  etc). Not necessary for ephemeris access.</li>
+</ul>
+<p>There exists several software libraries that are recommended to access the
+EPM files in the SPICE format: </p>
+<ul>
+<li>Software created by IAA RAS: <code>libephaccess</code> (a C library) and <code>ephcalculator</code>
+  (a command-line application based on the <code>libephaccess</code>). Both are available
+  at the <a href="https://gitlab.iaaras.ru/iaaras/ephemeris-access">IAA RAS GitLab server</a>.
+  The C library is self-documented currently only in Russian, while the
+  command-line application has built-in help provided in English.
+  A Python wrapper for the library is provided.</li>
+<li><a href="http://www.imcce.fr/fr/presentation/equipes/ASD/inpop/calceph/">CALCEPH</a> library by IMCCE
+  reads EPM or other ephemeris files presented in a number of formats, including
+  SPICE. The library provides a C API, and optionally a Fortran 77 or 2003
+  program interface. A Python wrapper for the library is provided.</li>
+<li><a href="https://naif.jpl.nasa.gov/naif/toolkit.html">SPICE toolkit</a> by NAIF
+  is a rich toolkit to perform a wide variety of astronomical tasks,
+  including ephemeris file access. The toolkit is offered for C, Fortran,
+  MATLAB, and IDL languages.</li>
+</ul>
+<h2>Access to IAA binary files</h2>
+<p>In the past, IAA developed its own binary format for ephemeris file storage. In
+that format, each object is represented in a separate binary file. The files for
+the latest version of EPM can be downloaded from the <code>BIN</code> directory of
+each of the <a href="ftp://ftp.iaaras.ru/pub/epm">EPM distributions at the IAA RAS FTP server</a>.</p>
+<p>Short description of the files:</p>
+<ul>
+<li><code>tdb.bin</code> : TT-TDB</li>
+<li><code>moonlibr.bin</code> : lunar physical libration</li>
+<li><code>moon.bin</code> : Moon (geocentric)</li>
+<li><code>earth_m.bin</code> : Earth-Moon barycenter (barycentric)</li>
+<li><code>sun.bin</code>, <code>mercury.bin</code>, <code>venus.bin</code>, <code>mars.bin</code>, <code>jupiter.bin</code>, <code>saturn.bin</code>,
+  <code>uranus.bin</code>, <code>neptune.bin</code>, <code>pluto.bin</code>, <code>ceres.bin</code>, <code>pallas.bin</code>, <code>vesta.bin</code>,
+  <code>eris.bin</code>, <code>sedna.bin</code>, <code>haumea.bin</code>, <code>makemake.bin</code> : other bodies (barycentric)</li>
+</ul>
+<h3>C</h3>
+<p>An ANSI C library to access these files can be found at the
+<a href="https://gitlab.iaaras.ru/iaaras/ephemeris-access-oldformats/tree/master/bin-c">IAA RAS GitLab server</a>.</p>
+<p>The library consists of a single module epm_bin_access.c plus a corresponding
+header epm_bin_access.h. There are just three functions exported by the library:</p>
+<pre><code>EpmFile * epm_file_open (const char *filename);
+</code></pre>
+<p>Opens a ".bin" file and returns a handler to it.</p>
+<pre><code>int epm_calc_raw_values (EpmFile *epmf, int jd, double jd_frac,
+                         double *pos, double *vel);
+</code></pre>
+<p>Calculates position and/or velocity of the given object. The Julian date (TDB)
+is supplied in the input as the sum of two values: jd is the integer part, while
+jd_frac is the fractional part.</p>
+<p>pos[] and vel[] must be allocated arrays of size at least 3 (1 in case of
+TT-TDB). If a given pos/vel is NULL, the corresponding values are not
+recorded.</p>
+<p>In the case of the "moonlibr.bin", the three Euler angles (in radians) are
+stored in pos[], while their rates go to vel[].</p>
+<p>In the case of the "tdb.bin", the TT-TDB (in seconds) will be stored in
+vel[0].</p>
+<p>In other cases, rectangular position of the body (in AU) is recorded into
+pos[], while its velocity (in AU/day) goes to vel[].</p>
+<pre><code>void epm_file_close (EpmFile *epmf);
+</code></pre>
+<p>Closes a previously opened ".bin" file and releases other resources allocated
+for it.</p>
+<p>Additionally to the C library, a command-line utility (epm-calculator.c) is
+provided that is built on top of the library. The following options can be
+passed to epm-calculator:</p>
+<pre><code>Usage: epm-calculator [parameters]
+Obligatory parameters:
+   -from-mjd &lt;real&gt;
+      Modified Julian date to start from
+   -body [tdb | earth | moon | moonlibr | EMB | sun | venus | ... ]
+      Celestial body or another object:
+        tdb = TT-TDB difference
+        moonlibr = lunar libration angles (in radians) and rates
+        EMB = Earth-Moon barycenter
+   -interval-days &lt;real&gt;
+      Interval length in days
+Optional parameters:
+   -step-days &lt;real&gt;
+      Step size in days (default 1 day)
+   -theory [epm2008|epm2011m|epm2015]
+      Theory to use for the calculations (default epm2015)
+   -frame [geocentric | barycentric | heliocentric]
+      Reference frame (default barycentric)
+   -width &lt;integer&gt;
+      Width of output numbers, including sign, decimal point, and exponent
+(default 20)
+   -distance-units [au|km]
+      Output positions in AU or km (default AU)
+   -time-units [sec|day]
+      Output velocities as a unit of distance per second or per day (default day)
+   -only-pos
+      Output only positions, skip velocities
+   -directory &lt;path&gt;
+      Directory containing the binary ephemeris files; default EPM2008/BIN,
+      EPM2011m/BIN, or EPM2015/BIN depending of chosen theory
+</code></pre>
+<h3>Java</h3>
+<p>A Java library and an example program to access IAA's binary EPM files is provided at the
+<a href="https://gitlab.iaaras.ru/iaaras/ephemeris-access-oldformats/tree/master/bin-java/">IAA RAS GitLab server</a>.</p>
+<p>The library consists of two modules:</p>
+<h4>org.iaaras.epm.EpmFile (low-level ".bin" file access)</h4>
+<pre><code>EpmFile (String filename, boolean from_resource)
+</code></pre>
+<p>Opens a ".bin" file and returns a handler to it. If from_resource flag is set,
+  the filename is treated as a path to resource rather than a file stored in a
+  file system.</p>
+<pre><code>void calcRawValues (int jd, double jd_frac, double[] pos, double[] vel)
+</code></pre>
+<p>Calculates position and/or velocity of the given object. The Julian date (TDB)
+  is supplied in the input as the sum of two values: jd is the integer part,
+  while jd_frac is the fractional part.</p>
+<p>pos[] and vel[] must be allocated arrays of size at least 3 (1 in case of
+  TT-TDB).</p>
+<p>In the case of the "moonlibr.bin", the three Euler angles (in radians) are
+  stored in pos[], while their rates go to vel[].</p>
+<p>In the case of the "tdb.bin", the TT-TDB (in seconds) will be stored in
+  vel[0].</p>
+<p>In other cases, rectangular position of the body (in AU) is recorded into
+  pos[], while its velocity (in AU/day) goes to vel[].</p>
+<pre><code>void close ()
+</code></pre>
+<p>Closes a previously opened ".bin" file.</p>
+<h4>org.iaaras.epm.EpmCalculator (higher-level access to ephemeris via EpmFile)</h4>
+<pre><code>EpmCalculator (String theory, String dir, boolean from_resource)
+</code></pre>
+<p>theory is "EPM<VERSION>", where <VERSION> is 2004, 2008, 2011, or 2015.
+  dir is a directory containing all the ".bin" files. If from_resource flag is
+  set, the directory is treated as a path to resource rather than a path in a
+  file system.</p>
+<pre><code>void calcLibr (int jd, double jd_frac, double[] pos, double[] vel)
+</code></pre>
+<p>Calculate lunar libration angles (in radians) and their rates (in radians/day)
+  for the given date.</p>
+<pre><code>double calcTDB (int jd, double jd_frac)
+</code></pre>
+<p>Calculate lunar libration angles (in seconds) for the given date.</p>
+<pre><code>void calcBarycentric (int pl_num, int jd, double jd_frac, double[] pos, double[] vel)
+</code></pre>
+<p>Calculates barycentric coordinates and velocities of one of the following objects
+  (corresponding pl_num values listed):
+  1 - Mercury, 2 - Venus, 3 - Earth, 4 - Mars, 5 - Jupiter, 6 - Saturn,
+  7 - Uranus, 8 - Neptune, 9 - Pluto, 10 - Moon, 11 - Sun, 12 - EMB.</p>
+<pre><code>void calcWrt (int pl_num, int centr_num, int jd, double jd_frac, double[] pos, double[] vel)
+</code></pre>
+<p>Calculates coordinates and velocities of one object (pl_num) with respect to
+  another (centr_num).  See the description of calcBarycentris for the allowed
+  values</p>
+<pre><code>void calcBarycentricDwarf (int dnum, int jd, double jd_frac, double[] pos, double[] vel)
+</code></pre>
+<p>Calculates barycentric coordinates and velocities of one of the following
+  objects (corresponding dnum values listed):
+  1 - Ceres, 2 - Pallas, 4 - Vesta, 136199 - Eris, 136108 - Haumea,
+  136472 - Makemake, 90377 - Sedna</p>
+<pre><code>public void close ()
+</code></pre>
+<p>Closes opened ephemeris files.</p>
+<p>The test module org.iaaras.epm.test.EpmCalculatorTest is an example command-line
+program built on top of EpmCalculator.</p>
+<h3>Fortran</h3>
+<p>The Fortran module (<code>calc_epm_bin.f90</code>) and an example program (<code>demo_bin.f90</code>)
+can be found at the
+<a href="https://gitlab.iaaras.ru/iaaras/ephemeris-access-oldformats/tree/master/bin-fortran">IAA RAS GitLab server</a>.</p>
+<h2>IAA text files</h2>
+<p>IAA provides ASCII files similar to binary files described in the previous section.
+The files can be downloaded from the <code>TXT</code> directory of
+each of the <a href="ftp://ftp.iaaras.ru/pub/epm">EPM distributions at the IAA RAS FTP server</a>.</p>
+<p>A Fortran library for accessing those files (<code>calc_epm_txt.F</code>) and an example program
+(<code>demo_txt.F</code>) can be found at the
+<a href="https://gitlab.iaaras.ru/iaaras/ephemeris-access-oldformats/tree/master/txt-fortran">IAA RAS GitLab server</a>.</p>
+<h2>Files in DE format</h2>
+<p>Versions of EPM starting from EPM2011m have been converted to the text and binary formats
+traditionally used for DE ephemeris developed by NASA JPL.</p>
+<p>The files can be downloaded from the <code>DE</code> directory of each of the
+<a href="ftp://ftp.iaaras.ru/pub/epm">EPM distributions at the IAA RAS FTP server</a>.</p>
+<p>Users who currently use some software to read ephemeris in DE format can try
+EPM without changing their software.</p>
+<p>The following parameters should be set in the ephemeris access library:</p>
+<pre><code>NCOEF = 1018
+KSIZE = 2036
+record length = 8144
+</code></pre>
+<h2>Additional periodic variation of the lunar libration angle psi</h2>
+<p>The EPM2015 lunar theory includes three additional periodic terms for longitude
+libration to account for small effects related to frequency dependent tidal
+dissipation. Those terms are not included in the ephemeris files nor into any of
+the software for access. The corresponding effect is small (~ 0.1 m) and will be
+significant only to users who work with very precise lunar laser ranging
+observations. Such users will have to introduce the following change to the
+lunar libration angle psi:</p>
+<p>$$\Delta\psi = A_1 \cos(l') + A_2 \cos(2l - 2D) + A_3 \cos(2F - 2l)$$</p>
+<p>where:</p>
+<ul>
+<li>l is the lunar mean anomaly</li>
+<li>l&prime; is the solar mean anomaly</li>
+<li>F is the argument of latitude</li>
+<li>D is the elongation of Moon from Sun</li>
+</ul>
+<p>The Delaunay arguments l, l', F, and D can be calculated using e.g. the SOFA
+library.</p>
+<p>For EPM2015, A1 = 4.5 mas, A2 = 1.4 mas, A3 = -7.3 mas.</p>
+<p>For EPM2017, A1 = 4.4 mas, A2 = 1.6 mas, A3 = -5.2 mas.</p>
+<h2>Usage and licensing information</h2>
+<p>IAA RAS holds the authorship and copyright for the EPM ephemeris files. These
+files are provided for free usage for scientific, commercial, or other purposes
+that do not break Russian or international laws.</p>
+<p>The program code for accessing EPM in obsolete formats (see sections 3-6) has
+been created at the IAA RAS and is in public domain.</p>
+<p>The CALCEPH library is copyright the National Center for Scientific Research
+(CNRS), France. Licensing information can be found at
+<a href="http://www.imcce.fr/fr/presentation/equipes/ASD/inpop/calceph/">http://www.imcce.fr/fr/presentation/equipes/ASD/inpop/calceph/</a>.</p>
+<p>The SPICE toolkit is copyright the Navigational and Ancillary Information
+Facility (NAIF), USA. Licensing information can be found at
+<a href="https://naif.jpl.nasa.gov/naif/rules.html">https://naif.jpl.nasa.gov/naif/rules.html</a>.</p>
+<p>Some references related to the Online Ephemeris Service can be found ]here.
+<a href="http://iaaras.ru/en/dept/ephemeris/online/references/">http://iaaras.ru/en/dept/ephemeris/online/references/</a>.</p>
+<h2>Contact</h2>
+<p>Dmitry Pavlov <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#112;&#97;&#118;&#108;&#111;&#118;&#64;&#105;&#97;&#97;&#114;&#97;&#115;&#46;&#114;&#117;">&#100;&#112;&#97;&#118;&#108;&#111;&#118;&#64;&#105;&#97;&#97;&#114;&#97;&#115;&#46;&#114;&#117;</a></p>
+</div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="footer-wrap">
+    <div class="footer">
+        <div class="block title">
+          <span>Federal State Budgetary Institution of&nbsp;Science Institute of Applied Astronomy of&nbsp;the&nbsp;Russian Academy of&nbsp;Sciences</span>
+        </div>
+        <div>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <a target="_blank" href="http://google.com/maps/place/Институт+прикладной+астрономии/@59.9489228,30.3451895,17z/data=!4m5!3m4!1s0x46963173e35ff5fd:0x507077536424cb8d!8m2!3d59.9491404!4d30.3450071">
+                Kutuzov embankment, 10
+            </a>
+        </div>
+        <div>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:iaaras@iaaras.ru">iaaras@iaaras.ru</a>
+        </div>
+        <div>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <a href="tel:78122751118">+7 (812) 275-1118</a>
+        </div>
+        <div>
+            <i class="fa fa-fax" aria-hidden="true"></i>
+            <a href="tel:78122751119">+7 (812) 275-1119</a>
+        </div>
+        <div class="block">
+                <a href="/en/about/contacts">Contacts</a>
+                <a href="/en/about/management">Management</a>
+                <a href="/en/meta">Meta</a>
+                <a href="/">Russian&nbsp;version</a>
+                <span class="copyright">©</span><span>IAA&nbsp;RAS&nbsp;2019</span>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var headings = document.querySelectorAll('.page-content h2');
+
+        if (headings.length > 1) {
+            $('.left-menu .active').append('<ul class="headings">');
+            for (var i = 0; i < headings.length; i++) {
+                var heading = headings[i];
+                if (heading.hasAttribute('exclude'))
+                    continue;
+                $('.left-menu .active ul').append('<li><a href="#' + i + '">' + heading.innerHTML + '</a></li>');
+                heading.innerHTML = '<a name="' + i + '">' + heading.innerHTML + '</a>';
+            }
+            $('.left-menu .active').append('</ul>');
+        }
+    </script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+XGrav by DWF, dave@case50.ncsl.nist.gov
+Version 1.0.1, 1/20/95
+
+This program is a hack of XSwarm 2.3 by Jeff Butterworth.  I know nothing
+about X programming, so I modified a program that was pretty close to what I
+wanted.
+
+Instead of a swarm of bees, this program now shows the gravitational
+interaction between a number of "stars."  The trails are left on purpose
+since I think it's more interesting that way.
+
+Insofar as I have any claim to this program (and I haven't much since it's
+a hack of somebody else's) the GNU General Public License would apply.  My
+contributions here are free, but they come with absolutely no warranty and
+nobody can get a patent on them.
+
+Command Line Options
+--------------------
+
+         -h|q|?            display this message
+         -r                use root window
+         -g geometry       window geometry
+         -d host:display   X server to connect to
+         -t timeout        screen saved after 'timeout' seconds
+         -D delay          non-blocking delay between updates (milliseconds)
+         -b stars          number of stars
+         -c star_clr       star color
+         -C bg_color       background color
+
+         Press d in the window to add a gravity well.
+         Press e in the window to erase trails.
+         Press q in the window to quit.
+
+Helpful Hints
+-------------
+
+1.  The default delay is 0.  Setting a nonzero delay slows it down a lot.
+    To slow it down a little, add stars.
+
+2.  You get nine stars by default.  The area over which the stars are
+    distributed when you start up gets bigger the more stars you ask for.
+    Too many stars too close together results in everything falling into
+    a black hole, which is not so entertaining.  The default window size
+    is always 512x512, so you might want to specify a bigger window if you
+    have a lot of stars.
+
+3.  In screensaver or root window mode, the program automatically starts
+    over every 2 minutes; otherwise it runs until you stop it.  The
+    keypress commands (d, e, q) only work in normal window mode.
+
+4.  The d command adds a stationary gravity well.  Since its position is
+    fixed it is easier to see elliptical orbits when they happen.  The d
+    is for destroy, since most of the stars won't orbit but will fall
+    right in.  Press d several times in a row to see some interesting
+    trajectories.
+
+5.  The e command is for erasing the old trails in case the screen gets
+    cluttered and you can't see what is happening.
+
+Known Bugs
+----------
+
+The pointer interferes with the screensaver.
+
+Big enough collapsars will become stationary like gravity wells.
+
+Collisions sometimes don't look right.
+
+Root window mode may not work on SGIs.
+
+History
+-------
+
+Updated README 1/20/95.
+
+
+Version 1.0 patch 1, 1/17/95.  Don't include getopt.h on Suns -- it ain't
+there.  Show patchlevel in title bar.  Reduced the amount of energy absorbed
+in a collision from 50% to 25%.  Removed gcc-specific -Wall from Imakefile.
+
+
+Version 1.0, 1/15/95.  This is actually the fifth time I have implemented an
+n-body program.  The first implementation was in BASIC on a VIC-20.  It didn't
+work very well.  I thought there was something I was missing in the algorithm.
+In retrospect, the algorithm was correct; what I did wrong was set the
+gravitational constant too high because I wanted to be able to see things
+moving on the screen.  The VIC-20 could not do enough iterations per second to
+get acceptable accuracy in real time.  The smaller the gravitational constant,
+the greater the accuracy but the slower the motion.
+
+The second implementation was a parallel version in Occam on a Transputer
+hypercube.  That one was a project for a parallel programming class.  It worked
+pretty well, but it was a short victory since it was about the least portable
+code I've ever written.  This led immediately to the third implementation,
+which was a rewrite of the VIC-20 BASIC on a Commodore 128 to behave more like
+the Occam version.  It worked, but it was too slow.
+
+The fourth implementation happened when I got my 386, under Turbo C++.  None of
+Borland's spiffy graphics drivers did what I needed, so I just POKEd the pixels
+into display memory like I did on the Commodore.  I later changed that program
+slightly to compile under GCC (DJGPP).  The syntax was different, but I was
+still using direct graphics.
+
+Now I have finally gotten stupid enough to blow a weekend getting it to run
+under X.  This is the fifth implementation.  The sixth one will probably be in
+3-D.

@@ -1,0 +1,1521 @@
+%!PSAdobe-1.0
+%%Creator: AWPaeth@watCGL && Craig Counterman
+%%Title: StarChart
+%%Pages: 1
+%%DocumentFonts Times-Roman Times-Bold Times-Italic Helvetica Symbol
+%%BoundingBox 0 0 612 828
+%%EndComments
+%%EndProlog
+%%Page: 0 1
+%
+% create additional user dictionary
+1000 dict begin
+%
+% alias moveto/drawto
+%
+/mt {moveto} def
+/lt {lineto} def
+% st, dt and ht are   x y st --
+/st {[] 0 setdash lineto stroke newpath} def
+/dt {[4] 0 setdash lineto stroke newpath [] 0 setdash} def
+/ht {[12] 0 setdash lineto stroke newpath [] 0 setdash} def
+%
+% text operations
+%
+% key fontsz --
+/fontsz {findfont exch 4 mul scalefont setfont} def
+% Show with extra spaces between words: string lbshw --
+/lbshw {5 0 8#040 4 3 roll widthshow} def
+% stroke white around filled letters: string obshw --
+/obshw {gsave dup false charpath 1 setgray 5 setlinewidth stroke
+            grestore true charpath fill} def
+% use symbol font for star label: string gshow --
+/gshow {currentfont exch
+        /Symbol findfont 40 scalefont setfont obshw setfont} def
+%
+% star/planet macros
+%
+% move relative to x1 x2 and draw to x2 y2 : x1 y1 x2 y2 movereldraw --
+/movereldraw {newpath 4 2 roll mt rlineto [] 0 setdash stroke} def
+% draw dash from -dx to +dx at x y:  x y dx starminus --
+/starminus {3 copy 0 movereldraw neg 0 movereldraw} def
+% draw plus sign size dx at x y:  x y dx starplus --
+/starplus {3 copy 0 movereldraw 3 copy neg 0 movereldraw
+          3 copy 0 exch movereldraw 0 exch neg movereldraw} def
+% draw circle diameter r at x y: x y r starcirc --
+/starcirc {newpath 0 360 arc closepath stroke} def
+% draw filled circle diameter r at x y: x y r starbody --
+/starbody {newpath 0 360 arc closepath fill} def
+% draw circle diameter r at x y: x y r starbodyvar --
+/starbodyvar {starcirc} def
+
+% draw dash and filled circle diameter r at x y: x y r starbodydbl --
+/starbodydbl {3 copy dup 3 div add starminus starbody} def
+%
+% make r larger and set white: x y r back x y r x y (r+dr)
+/back {3 copy 2 add 1 setgray} def
+% set foreground drawing color
+/fore {0 setgray} def
+% normal star: x y r s --
+/s {back starbody fore starbody} def
+% double star: x y r s --
+/d {back starbodydbl fore starbodydbl} def
+% variable star: x y r s --
+/v {back starbodyvar fore starbodyvar} def
+/s_1 {36 s} def
+/d_1 {36 d} def
+/v_1 {36 v} def
+/s0 {32 s} def
+/d0 {32 d} def
+/v0 {32 v} def
+/s1 {28 s} def
+/d1 {28 d} def
+/v1 {28 v} def
+/s2 {24 s} def
+/d2 {24 d} def
+/v2 {24 v} def
+/s3 {20 s} def
+/d3 {20 d} def
+/v3 {20 v} def
+/s4 {16 s} def
+/d4 {16 d} def
+/v4 {16 v} def
+/s5 {13 s} def
+/d5 {13 d} def
+/v5 {13 v} def
+/s6 {10 s} def
+/d6 {10 d} def
+/v6 {10 v} def
+/s7 {8 s} def
+/d7 {8 d} def
+/v7 {8 v} def
+/s8 {6 s} def
+/d8 {6 d} def
+/v8 {6 v} def
+/s9 {4 s} def
+/d9 {4 d} def
+/v9 {4 v} def
+/s10 {2 s} def
+/d10 {2 d} def
+/v10 {2 v} def
+/s11 {2 s} def
+/d11 {2 d} def
+/v11 {2 v} def
+/s12 {2 s} def
+/d12 {2 d} def
+/v12 {2 v} def
+/s13 {2 s} def
+/d13 {2 d} def
+/v13 {2 v} def
+/s14 {2 s} def
+/d14 {2 d} def
+/v14 {2 v} def
+/s15 {2 s} def
+/d15 {2 d} def
+/v15 {2 v} def
+/s16 {2 s} def
+/d16 {2 d} def
+/v16 {2 v} def
+/s17 {2 s} def
+/d17 {2 d} def
+/v17 {2 v} def
+/s18 {2 s} def
+/d18 {2 d} def
+/v18 {2 v} def
+/s19 {2 s} def
+/d19 {2 d} def
+/v19 {2 v} def
+/s20 {2 s} def
+/d20 {2 d} def
+/v20 {2 v} def
+%
+% non-stellar object macros (better designs most welcome)
+/stdsh0 { [] 0 setdash } def
+% all but comet and moon take x y diam,
+%    comet takes x y diam position-angle,
+%    and moon takes x y diam phase pa-of-bright-limb
+%    all leave nothing on the stack
+/planet  { 2.4 div dup /sze exch def neg /nsze exch def
+    2 copy stdsh0 sze starcirc sze 1.2 mul starplus} def
+/mercury { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath 0 1 .4 180 0 arc .5 .1 moveto
+   0 .1 .5 0 360 arc 0 -.4 moveto
+   0 -1 lineto -.3 -.7 moveto .3 -.7 lineto stroke
+   grestore} def
+/venus { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath 0 .4 .5 0 360 arc 0 .1 moveto 0 -.9 lineto -.4 -.55 moveto
+   .4 -.55 lineto stroke grestore } def
+/mars { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath -.2 -.2 .6 0 405 arc
+   .7 .7 lineto 0 -.5 rmoveto 0 .5 rlineto
+   -.5 0 rlineto stroke grestore} def
+/jupiter { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath .5 -.9 moveto .5 .9 lineto .9 -.5 moveto -.7 -.5 lineto
+   .2 -.5 .2 .4 .8 arcto pop pop pop pop .2 .4 lineto
+   .1 .9 -.4 .6 .4 arcto pop pop pop pop -.4 .6 lineto
+   -.8 .4 -.5 .2 .3 arcto pop pop pop pop
+   stroke grestore} def
+/saturn { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath -.5 -.7 moveto -.5 1 lineto -.8 1 moveto -.2 1 lineto
+   -.5 0 moveto -.3 .3 0 .3 .6 arcto pop pop pop pop 0 .3 lineto
+   .5 .3 .4 -.1 .4 arcto pop pop pop pop .4 -.1 lineto .3 -.6 lineto
+   .3 -1.5 .7 -.8 .2 arcto pop pop pop pop .7 -.8 lineto
+   stroke grestore} def
+/uranus { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath -1 1 moveto -1 -1 lineto  1 1 moveto 1 -1 lineto stroke
+   -1 0 moveto 1 0 lineto stroke
+   0 1 moveto 0 -1 lineto stroke
+   0 -1.3 .3 0 360 arc stroke
+   grestore } def
+/neptune { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath 0 -.9 moveto
+   0 .8 lineto -.8 .8 moveto -.7 .5 lineto -.7 0 lineto .7 0 lineto
+   .7 .5 lineto .8 .8 lineto -.5 -.5 moveto
+   .5 -.5 lineto stroke grestore} def
+/pluto { 4 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 0 2 0 360 arc stroke
+   newpath -1 1 moveto -1 -1 lineto .5 -1 lineto stroke
+   -1 1 moveto 0 1 lineto -1 0 moveto 0 0 lineto stroke
+   0 .5 .5 270 90 arc stroke
+   grestore} def
+/sun { 2 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+    newpath 0 0 1 0 360 arc stroke
+    0 0 .2 0 360 arc fill grestore } def
+/moon { /chi exch def /phase exch def 2 div /sze exch def moveto
+   gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath [.1 .2] 0 setdash 0 0 1 0 360 arc stroke
+   stdsh0 gsave
+      chi rotate
+      newpath
+
+      0 0 1 0 180 arcn
+      1 phase cos scale
+      0 0 1 180 360 arc fill
+   grestore grestore } def
+/asteroid { 4 div dup /sze exch def neg /nsze exch def
+    2 copy stdsh0 newpath sze 3 div 0 360 arc closepath fill
+    moveto sze sze rmoveto nsze 2 mul nsze 2 mul rlineto
+    sze 2 mul 0 rmoveto nsze 2 mul sze 2 mul rlineto stroke } def
+/comet {/phase exch def 2 div dup /sze exch def neg /nsze exch def 
+    moveto gsave currentpoint translate sze dup scale
+    .1 setlinewidth
+    90 phase sub neg rotate stdsh0 newpath 0 0 .3 0 360 arc stroke
+    0 .3 moveto 1 .5 lineto 0 -.3 moveto 1 -.5 lineto
+    .3 0 moveto 1.2 0 lineto
+    stroke grestore } def
+/nebulad { 2 div dup /sze exch def neg /nsze exch def stdsh0
+    newpath moveto sze 0 rmoveto nsze nsze rlineto nsze sze rlineto
+    sze sze rlineto sze nsze rlineto stroke } def
+/nebulap { 4 div /sze exch def moveto
+    gsave currentpoint translate
+    sze dup scale .1 setlinewidth
+    newpath 0 0 1 0 360 arc stroke
+    newpath 2 0 moveto 1 0 lineto -1 0 moveto -2 0 lineto
+    0 2 moveto 0 1 lineto 0 -1 moveto 0 -2 lineto stroke
+    grestore} def
+/nebula {nebulad} def
+/galaxye { 2 div dup /sze exch def neg /nsze exch def
+    gsave stdsh0 newpath translate -30 rotate 1 .5 scale
+    0 0 sze 0 360 arc closepath fill
+    grestore } def
+/galaxys { 2 div dup /sze exch def neg /nsze exch def
+    gsave stdsh0 newpath translate -30 rotate 1 .5 scale
+    0 0 sze 0 360 arc closepath fill
+    nsze 1.25 mul nsze moveto nsze 0 lineto sze 1.25 mul sze moveto
+    sze 0 lineto stroke  grestore } def
+/galaxyq { 2 div dup /sze exch def neg /nsze exch def
+    gsave stdsh0 newpath translate
+    nsze 0 moveto sze 0 lineto 0 nsze moveto 0 sze lineto stroke
+     -30 rotate 1 .5 scale 0 0 sze 0 360 arc closepath fill
+    grestore } def
+/galaxy {galaxye} def
+/clustero { 2 div dup /sze exch def neg /nsze exch def
+    2 copy newpath 1 setgray sze 0 360 arc fill
+    [4 8] 0 setdash 0 setgray sze 0 360 arc stroke stdsh0 } def
+/clusterg { 2 div dup /sze exch def neg /nsze exch def
+    2 copy 2 copy newpath 1 setgray sze 0 360 arc fill
+    [4 8] 0 setdash 0 setgray sze 0 360 arc stroke
+    3 0 360 arc closepath fill stdsh0 } def
+/cluster {clustero} def
+/unknown_u { 2 div /sze exch def moveto gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   newpath 0 .5 .5 180 270 arcn stroke
+   0 0 moveto 0 -1 lineto stroke
+   grestore} def
+/other_o { 2 div /sze exch def moveto gsave currentpoint translate
+   sze dup scale .1 setlinewidth
+   1 1 moveto -1 -1 lineto  -1 1 moveto 1 -1 lineto stroke
+   0 1 moveto 1 0 lineto  0 -1 lineto -1 0 lineto 0 1 lineto stroke
+   grestore} def
+%
+%
+1 4 div dup scale
+% alter line drawing defaults, guarentee solid black lines
+1 setlinewidth 2 setlinecap
+[] 0 setdash 0 setgray
+%
+% boiler-plate
+%
+% Set a font
+18 /Times-Roman fontsz
+%
+%
+% THE STUFF
+%
+%./starpost 
+%Start
+%OUTLINE
+2115 864 mt
+117 864 lt
+117 864 st
+2115 2880 mt
+117 2880 lt
+117 2880 st
+2115 864 mt
+2118 998 lt
+2119 1133 lt
+2121 1267 lt
+2122 1402 lt
+2123 1536 lt
+2124 1670 lt
+2124 1805 lt
+2124 1939 lt
+2124 2074 lt
+2123 2208 lt
+2122 2342 lt
+2121 2477 lt
+2119 2611 lt
+2118 2746 lt
+2115 2880 lt
+2115 2880 st
+117 864 mt
+114 998 lt
+113 1133 lt
+111 1267 lt
+110 1402 lt
+109 1536 lt
+108 1670 lt
+108 1805 lt
+108 1939 lt
+108 2074 lt
+109 2208 lt
+110 2342 lt
+111 2477 lt
+113 2611 lt
+114 2746 lt
+117 2880 lt
+117 2880 st
+1116 846 mt
+1116 864 lt
+10 /Times-Bold fontsz
+1116 864 st
+1116 824 mt
+1116 824 mt
+( 0h) lbshw
+1782 852 mt
+1782 864 lt
+1782 864 st
+1782 824 mt
+1782 824 mt
+(23h40m) lbshw
+1116 852 mt
+1116 864 lt
+1116 864 st
+1116 824 mt
+1116 824 mt
+( 0h) lbshw
+450 852 mt
+450 864 lt
+450 864 st
+450 824 mt
+450 824 mt
+( 0h20m) lbshw
+2049 858 mt
+2049 864 lt
+2049 864 st
+1916 858 mt
+1916 864 lt
+1916 864 st
+1782 858 mt
+1782 864 lt
+1782 864 st
+1649 858 mt
+1649 864 lt
+1649 864 st
+1516 858 mt
+1516 864 lt
+1516 864 st
+1383 858 mt
+1383 864 lt
+1383 864 st
+1249 858 mt
+1249 864 lt
+1249 864 st
+1116 858 mt
+1116 864 lt
+1116 864 st
+983 858 mt
+983 864 lt
+983 864 st
+849 858 mt
+849 864 lt
+849 864 st
+716 858 mt
+716 864 lt
+716 864 st
+583 858 mt
+583 864 lt
+583 864 st
+450 858 mt
+450 864 lt
+450 864 st
+316 858 mt
+316 864 lt
+316 864 st
+183 858 mt
+183 864 lt
+183 864 st
+2124 1872 mt
+2142 1872 lt
+2142 1872 st
+2160 1872 mt
+2160 1872 mt
+( 00d) lbshw
+2120 1200 mt
+2132 1200 lt
+2132 1200 st
+2156 1200 mt
+2156 1200 mt
+(-05d) lbshw
+2124 1872 mt
+2136 1872 lt
+2136 1872 st
+2160 1872 mt
+2160 1872 mt
+( 00d) lbshw
+2120 2544 mt
+2132 2544 lt
+2132 2544 st
+2156 2544 mt
+2156 2544 mt
+(+05d) lbshw
+2116 931 mt
+2122 931 lt
+2122 931 st
+2152 931 mt
+2152 931 mt
+(-07d) lbshw
+2118 1066 mt
+2124 1066 lt
+2124 1066 st
+2154 1066 mt
+2154 1066 mt
+(-06d) lbshw
+2120 1200 mt
+2126 1200 lt
+2126 1200 st
+2156 1200 mt
+2156 1200 mt
+(-05d) lbshw
+2122 1334 mt
+2128 1334 lt
+2128 1334 st
+2158 1334 mt
+2158 1334 mt
+(-04d) lbshw
+2123 1469 mt
+2129 1469 lt
+2129 1469 st
+2159 1469 mt
+2159 1469 mt
+(-03d) lbshw
+2123 1603 mt
+2129 1603 lt
+2129 1603 st
+2159 1603 mt
+2159 1603 mt
+(-02d) lbshw
+2124 1738 mt
+2130 1738 lt
+2130 1738 st
+2160 1738 mt
+2160 1738 mt
+(-01d) lbshw
+2124 1872 mt
+2130 1872 lt
+2130 1872 st
+2160 1872 mt
+2160 1872 mt
+( 00d) lbshw
+2124 2006 mt
+2130 2006 lt
+2130 2006 st
+2160 2006 mt
+2160 2006 mt
+(+01d) lbshw
+2123 2141 mt
+2129 2141 lt
+2129 2141 st
+2159 2141 mt
+2159 2141 mt
+(+02d) lbshw
+2123 2275 mt
+2129 2275 lt
+2129 2275 st
+2159 2275 mt
+2159 2275 mt
+(+03d) lbshw
+2122 2410 mt
+2128 2410 lt
+2128 2410 st
+2158 2410 mt
+2158 2410 mt
+(+04d) lbshw
+2120 2544 mt
+2126 2544 lt
+2126 2544 st
+2156 2544 mt
+2156 2544 mt
+(+05d) lbshw
+2118 2678 mt
+2124 2678 lt
+2124 2678 st
+2154 2678 mt
+2154 2678 mt
+(+06d) lbshw
+2116 2813 mt
+2122 2813 lt
+2122 2813 st
+2152 2813 mt
+2152 2813 mt
+(+07d) lbshw
+%RA_GRID
+%DEC_GRID
+%ECLIPTIC
+1116 1872 mt
+1116 1872 st
+1116 1872 mt
+1054 1899 lt
+1054 1899 dt
+1054 1899 mt
+1024 1912 lt
+1024 1912 dt
+1024 1912 mt
+1008 1919 lt
+1008 1919 dt
+1008 1919 mt
+993 1925 lt
+993 1925 dt
+993 1925 mt
+551 2117 lt
+551 2117 dt
+551 2117 mt
+111 2307 lt
+111 2307 dt
+2121 1437 mt
+993 1925 lt
+%BOUNDARIES
+993 1925 dt
+1217 864 mt
+1217 864 dt
+1217 864 mt
+1217 942 lt
+1217 942 ht
+1217 942 mt
+1216 982 lt
+1216 982 ht
+1216 982 mt
+1216 1021 lt
+1216 1021 ht
+1216 1021 mt
+1217 1435 lt
+1217 1435 ht
+1217 1435 mt
+2122 1431 lt
+2122 1431 ht
+109 2230 mt
+227 2230 lt
+227 2230 ht
+227 2230 mt
+226 2156 lt
+226 2156 ht
+226 2156 mt
+226 2081 lt
+226 2081 ht
+226 2081 mt
+226 1931 lt
+226 1931 ht
+226 1931 mt
+226 1631 lt
+226 1631 ht
+226 1631 mt
+228 1332 lt
+228 1332 ht
+228 1332 mt
+231 1032 lt
+231 1032 ht
+231 1032 mt
+724 1026 lt
+724 1026 ht
+724 1026 mt
+970 1024 lt
+970 1024 ht
+970 1024 mt
+1216 1021 lt
+%PATTERNS
+1216 1021 ht
+117 2860 mt
+117 2860 ht
+117 2860 mt
+245 2853 lt
+245 2853 st
+245 2853 mt
+373 2845 lt
+373 2845 st
+373 2845 mt
+500 2838 lt
+500 2838 st
+500 2838 mt
+628 2830 lt
+628 2830 st
+628 2830 mt
+756 2821 lt
+756 2821 st
+756 2821 mt
+820 2817 lt
+820 2817 st
+820 2817 mt
+883 2813 lt
+883 2813 st
+883 2813 mt
+1139 2795 lt
+1139 2795 st
+1139 2795 mt
+1463 2713 lt
+1463 2713 st
+1463 2713 mt
+1625 2671 lt
+1625 2671 st
+1625 2671 mt
+1786 2629 lt
+1786 2629 st
+1786 2629 mt
+1952 2671 lt
+1952 2671 st
+1952 2671 mt
+2117 2713 lt
+2117 2713 st
+2123 2055 mt
+1719 2112 lt
+1719 2112 st
+1719 2112 mt
+1646 2226 lt
+1646 2226 st
+1646 2226 mt
+1572 2340 lt
+1572 2340 st
+1572 2340 mt
+1626 2412 lt
+1626 2412 st
+1626 2412 mt
+1639 2431 lt
+1639 2431 st
+1639 2431 mt
+1653 2449 lt
+1653 2449 st
+1653 2449 mt
+1679 2485 lt
+1679 2485 st
+1679 2485 mt
+1733 2557 lt
+1733 2557 st
+1733 2557 mt
+1760 2593 lt
+1760 2593 st
+1760 2593 mt
+1786 2629 lt
+%CONSTLNAMES
+%ALLFILES
+%file 0, type 1, './D/yale.star'
+
+1786 2629 st
+1139 2795 mt
+1139 2795 s4
+1786 2629 mt
+1786 2629 s4
+1050 1063 mt
+1050 1063 s4
+1719 2112 mt
+1719 2112 s5
+938 1106 mt
+938 1106 s5
+1161 1393 mt
+1161 1393 d5
+1572 2340 mt
+1572 2340 s5
+1055 1464 mt
+1055 1464 s5
+1521 1500 mt
+1521 1500 s5
+1386 2264 mt
+1386 2264 s6
+1292 1885 mt
+1292 1885 s6
+1909 2154 mt
+1909 2154 s6
+1470 2015 mt
+1470 2015 s6
+263 2132 mt
+263 2132 s6
+771 1166 mt
+771 1166 s6
+1985 1704 mt
+1985 1704 s6
+1718 2846 mt
+1718 2846 s6
+1354 1446 mt
+1354 1446 d6
+293 1574 mt
+293 1574 s6
+1499 1014 mt
+1499 1014 s6
+841 1543 mt
+841 1543 s6
+519 2098 mt
+519 2098 s6
+221 1865 mt
+221 1865 s6
+1278 2822 mt
+1278 2822 s6
+1349 2152 mt
+1349 2152 s6
+946 1805 mt
+946 1805 s6
+1931 868 mt
+1931 868 s6
+2084 1028 mt
+2084 1028 s6
+2058 1726 mt
+2058 1726 s6
+857 1529 mt
+857 1529 s6
+1491 2168 mt
+1491 2168 s6
+2070 1323 mt
+2070 1323 s6
+%file 1, type 2, '/dev/null'
+
+%file 2, type 1, './D/messier.star'
+
+%file 3, type 1, './planet.star'
+
+572 2069 mt
+%diam 0.463
+572 2069 48 venus
+10 /Times-Roman fontsz
+608 2069 mt
+608 2069 mt
+(Venus) lbshw
+%LEGENDS
+16 /Times-Bold fontsz
+144 720 mt
+144 720 mt
+(LEGEND) lbshw
+12 /Times-Roman fontsz
+144 648 mt
+144 648 mt
+(( 0h, 00d lim: 8.0)) lbshw
+10 /Times-Roman fontsz
+144 576 mt
+144 576 s3
+180 576 mt
+180 576 mt
+( 3) lbshw
+432 576 mt
+432 576 s4
+468 576 mt
+468 576 mt
+( 4) lbshw
+720 576 mt
+720 576 s5
+756 576 mt
+756 576 mt
+( 5) lbshw
+144 528 mt
+144 528 s6
+180 528 mt
+180 528 mt
+( 6) lbshw
+432 384 mt
+432 384 d5
+468 384 mt
+468 384 mt
+(double) lbshw
+720 384 mt
+720 384 v5
+756 384 mt
+756 384 mt
+(variable) lbshw
+144 336 mt
+%diam 0.463
+144 336 48 planet
+180 336 mt
+180 336 mt
+(Planet) lbshw
+432 336 mt
+%diam 0.463
+432 336 48 asteroid
+468 336 mt
+468 336 mt
+(Asteroid) lbshw
+720 336 mt
+%diam 0.463
+%phase 135.000000
+720 336 48 135.000000 comet
+756 336 mt
+756 336 mt
+(Comet) lbshw
+144 288 mt
+144 288 24 cluster
+180 288 mt
+180 288 mt
+(Cluster) lbshw
+432 288 mt
+432 288 24 clusterg
+468 288 mt
+468 288 mt
+(Globular) lbshw
+720 288 mt
+720 288 24 clustero
+756 288 mt
+756 288 mt
+(Open) lbshw
+144 240 mt
+144 240 24 nebula
+180 240 mt
+180 240 mt
+(Nebula) lbshw
+432 240 mt
+432 240 24 nebulap
+468 240 mt
+468 240 mt
+(Planetary) lbshw
+720 240 mt
+720 240 24 nebulad
+756 240 mt
+756 240 mt
+(Diffuse) lbshw
+144 192 mt
+144 192 24 galaxy
+180 192 mt
+180 192 mt
+(Galaxy) lbshw
+432 192 mt
+432 192 24 galaxye
+468 192 mt
+468 192 mt
+(Elliptical) lbshw
+720 192 mt
+720 192 24 galaxys
+756 192 mt
+756 192 mt
+(Spiral) lbshw
+144 144 mt
+144 144 24 unknown_u
+180 144 mt
+180 144 mt
+(Unknown) lbshw
+432 144 mt
+432 144 24 other_o
+468 144 mt
+468 144 mt
+(Other) lbshw
+720 144 mt
+720 144 24 galaxyq
+756 144 mt
+756 144 mt
+(Quasar) lbshw
+%OUTLINE
+2118 144 mt
+1122 144 lt
+1122 144 st
+2118 720 mt
+1122 720 lt
+1122 720 st
+2118 144 mt
+2119 176 lt
+2120 208 lt
+2121 240 lt
+2122 272 lt
+2123 304 lt
+2123 336 lt
+2124 368 lt
+2124 400 lt
+2124 432 lt
+2124 464 lt
+2124 496 lt
+2123 528 lt
+2123 560 lt
+2122 592 lt
+2121 624 lt
+2120 656 lt
+2119 688 lt
+2118 720 lt
+2118 720 st
+1122 144 mt
+1121 176 lt
+1120 208 lt
+1119 240 lt
+1118 272 lt
+1117 304 lt
+1117 336 lt
+1116 368 lt
+1116 400 lt
+1116 432 lt
+1116 464 lt
+1116 496 lt
+1117 528 lt
+1117 560 lt
+1118 592 lt
+1119 624 lt
+1120 656 lt
+1121 688 lt
+1122 720 lt
+1122 720 st
+2094 126 mt
+2094 144 lt
+10 /Times-Bold fontsz
+2094 144 st
+2094 104 mt
+2094 104 mt
+(23h) lbshw
+1620 126 mt
+1620 144 lt
+1620 144 st
+1620 104 mt
+1620 104 mt
+( 0h) lbshw
+1146 126 mt
+1146 144 lt
+1146 144 st
+1146 104 mt
+1146 104 mt
+( 1h) lbshw
+2094 132 mt
+2094 144 lt
+2094 144 st
+2094 104 mt
+2094 104 mt
+(23h) lbshw
+1936 132 mt
+1936 144 lt
+1936 144 st
+1936 104 mt
+1936 104 mt
+(23h20m) lbshw
+1778 132 mt
+1778 144 lt
+1778 144 st
+1778 104 mt
+1778 104 mt
+(23h40m) lbshw
+1620 132 mt
+1620 144 lt
+1620 144 st
+1620 104 mt
+1620 104 mt
+( 0h) lbshw
+1462 132 mt
+1462 144 lt
+1462 144 st
+1462 104 mt
+1462 104 mt
+( 0h20m) lbshw
+1304 132 mt
+1304 144 lt
+1304 144 st
+1304 104 mt
+1304 104 mt
+( 0h40m) lbshw
+1146 132 mt
+1146 144 lt
+1146 144 st
+1146 104 mt
+1146 104 mt
+( 1h) lbshw
+2094 138 mt
+2094 144 lt
+2094 144 st
+2062 138 mt
+2062 144 lt
+2062 144 st
+2031 138 mt
+2031 144 lt
+2031 144 st
+1999 138 mt
+1999 144 lt
+1999 144 st
+1968 138 mt
+1968 144 lt
+1968 144 st
+1936 138 mt
+1936 144 lt
+1936 144 st
+1904 138 mt
+1904 144 lt
+1904 144 st
+1873 138 mt
+1873 144 lt
+1873 144 st
+1841 138 mt
+1841 144 lt
+1841 144 st
+1810 138 mt
+1810 144 lt
+1810 144 st
+1778 138 mt
+1778 144 lt
+1778 144 st
+1746 138 mt
+1746 144 lt
+1746 144 st
+1715 138 mt
+1715 144 lt
+1715 144 st
+1683 138 mt
+1683 144 lt
+1683 144 st
+1652 138 mt
+1652 144 lt
+1652 144 st
+1620 138 mt
+1620 144 lt
+1620 144 st
+1588 138 mt
+1588 144 lt
+1588 144 st
+1557 138 mt
+1557 144 lt
+1557 144 st
+1525 138 mt
+1525 144 lt
+1525 144 st
+1494 138 mt
+1494 144 lt
+1494 144 st
+1462 138 mt
+1462 144 lt
+1462 144 st
+1430 138 mt
+1430 144 lt
+1430 144 st
+1399 138 mt
+1399 144 lt
+1399 144 st
+1367 138 mt
+1367 144 lt
+1367 144 st
+1336 138 mt
+1336 144 lt
+1336 144 st
+1304 138 mt
+1304 144 lt
+1304 144 st
+1272 138 mt
+1272 144 lt
+1272 144 st
+1241 138 mt
+1241 144 lt
+1241 144 st
+1209 138 mt
+1209 144 lt
+1209 144 st
+1178 138 mt
+1178 144 lt
+1178 144 st
+1146 138 mt
+1146 144 lt
+1146 144 st
+2124 432 mt
+2142 432 lt
+2142 432 st
+2160 432 mt
+2160 432 mt
+( 00d) lbshw
+2122 272 mt
+2134 272 lt
+2134 272 st
+2158 272 mt
+2158 272 mt
+(-05d) lbshw
+2124 432 mt
+2136 432 lt
+2136 432 st
+2160 432 mt
+2160 432 mt
+( 00d) lbshw
+2122 592 mt
+2134 592 lt
+2134 592 st
+2158 592 mt
+2158 592 mt
+(+05d) lbshw
+2118 144 mt
+2124 144 lt
+2124 144 st
+2119 176 mt
+2125 176 lt
+2125 176 st
+2120 208 mt
+2126 208 lt
+2126 208 st
+2121 240 mt
+2127 240 lt
+2127 240 st
+2122 272 mt
+2128 272 lt
+2128 272 st
+2123 304 mt
+2129 304 lt
+2129 304 st
+2123 336 mt
+2129 336 lt
+2129 336 st
+2124 368 mt
+2130 368 lt
+2130 368 st
+2124 400 mt
+2130 400 lt
+2130 400 st
+2124 432 mt
+2130 432 lt
+2130 432 st
+2124 464 mt
+2130 464 lt
+2130 464 st
+2124 496 mt
+2130 496 lt
+2130 496 st
+2123 528 mt
+2129 528 lt
+2129 528 st
+2123 560 mt
+2129 560 lt
+2129 560 st
+2122 592 mt
+2128 592 lt
+2128 592 st
+2121 624 mt
+2127 624 lt
+2127 624 st
+2120 656 mt
+2126 656 lt
+2126 656 st
+2119 688 mt
+2125 688 lt
+2125 688 st
+2118 720 mt
+2124 720 lt
+%RA_GRID
+%DEC_GRID
+%ECLIPTIC
+2124 720 st
+1620 432 mt
+1620 432 st
+1620 432 mt
+1591 445 lt
+1591 445 dt
+1591 445 mt
+1297 571 lt
+1297 571 dt
+1297 571 mt
+1209 609 lt
+1209 609 dt
+1209 609 mt
+1165 628 lt
+1165 628 dt
+1165 628 mt
+1120 646 lt
+1120 646 dt
+2120 218 mt
+2002 267 lt
+2002 267 dt
+2002 267 mt
+1995 271 lt
+1995 271 dt
+1995 271 mt
+1987 274 lt
+1987 274 dt
+1987 274 mt
+1973 280 lt
+1973 280 dt
+1973 280 mt
+1943 293 lt
+1943 293 dt
+1943 293 mt
+1914 305 lt
+1914 305 dt
+1914 305 mt
+1884 318 lt
+1884 318 dt
+1884 318 mt
+1591 445 lt
+%BOUNDARIES
+1591 445 dt
+1644 144 mt
+1644 144 dt
+1644 144 mt
+1644 166 lt
+1644 166 ht
+1644 166 mt
+1644 187 lt
+1644 187 ht
+1644 187 mt
+1644 229 lt
+1644 229 ht
+1644 229 mt
+1644 279 lt
+1644 279 ht
+1644 279 mt
+1644 328 lt
+1644 328 ht
+1644 328 mt
+1884 327 lt
+1884 327 ht
+1884 327 mt
+2123 326 lt
+2123 326 ht
+1117 516 mt
+1154 516 lt
+1154 516 ht
+1154 516 mt
+1163 517 lt
+1163 517 ht
+1163 517 mt
+1172 517 lt
+1172 517 ht
+1172 517 mt
+1190 517 lt
+1190 517 ht
+1190 517 mt
+1263 517 lt
+1263 517 ht
+1263 517 mt
+1408 517 lt
+1408 517 ht
+1408 517 mt
+1408 375 lt
+1408 375 ht
+1408 375 mt
+1409 303 lt
+1409 303 ht
+1409 303 mt
+1409 286 lt
+1409 286 ht
+1409 286 mt
+1409 268 lt
+1409 268 ht
+1409 268 mt
+1409 232 lt
+1409 232 ht
+1409 232 mt
+1527 231 lt
+1527 231 ht
+1527 231 mt
+1644 229 lt
+1644 229 ht
+2119 693 mt
+1644 693 lt
+1644 693 ht
+1644 693 mt
+1644 720 lt
+%PATTERNS
+1644 720 ht
+1121 684 mt
+1121 684 ht
+1121 684 mt
+1178 680 lt
+1178 680 st
+1178 680 mt
+1234 675 lt
+1234 675 st
+1234 675 mt
+1430 665 lt
+1430 665 st
+1430 665 mt
+1479 662 lt
+1479 662 st
+1479 662 mt
+1528 658 lt
+1528 658 st
+1528 658 mt
+1625 652 lt
+1625 652 st
+1625 652 mt
+1703 632 lt
+1703 632 st
+1703 632 mt
+1780 612 lt
+1780 612 st
+1780 612 mt
+1875 636 lt
+1875 636 st
+1875 636 mt
+1936 604 lt
+1936 604 st
+1936 604 mt
+1949 571 lt
+1949 571 st
+1949 571 mt
+1956 554 lt
+1956 554 st
+1956 554 mt
+1962 537 lt
+1962 537 st
+1962 537 mt
+1943 521 lt
+1943 521 st
+1943 521 mt
+1923 505 lt
+1923 505 st
+1923 505 mt
+1914 496 lt
+1914 496 st
+1914 496 mt
+1904 488 lt
+1904 488 st
+1904 488 mt
+1884 472 lt
+1884 472 st
+1884 472 mt
+1824 481 lt
+1824 481 st
+1824 481 mt
+1764 489 lt
+1764 489 st
+1764 489 mt
+1729 543 lt
+1729 543 st
+1729 543 mt
+1741 561 lt
+1741 561 st
+1741 561 mt
+1745 565 lt
+1745 565 st
+1745 565 mt
+1748 569 lt
+1748 569 st
+1748 569 mt
+1751 574 lt
+1751 574 st
+1751 574 mt
+1753 576 lt
+1753 576 st
+1753 576 mt
+1754 578 lt
+1754 578 st
+1754 578 mt
+1780 612 lt
+1780 612 st
+1442 145 mt
+1466 149 lt
+1466 149 st
+1466 149 mt
+1464 145 lt
+1464 145 st
+2119 199 mt
+2051 219 lt
+2051 219 st
+2051 219 mt
+2017 229 lt
+2017 229 st
+2017 229 mt
+1983 238 lt
+1983 238 st
+1983 238 mt
+1977 192 lt
+1977 192 st
+1977 192 mt
+1970 145 lt
+%ALLFILES
+%file 0, type 1, './D/yale.star'
+
+1970 145 st
+1466 149 mt
+1466 149 s5
+1962 537 mt
+1962 537 s5
+1625 652 mt
+1625 652 s6
+1780 612 mt
+1780 612 s6
+1983 238 mt
+1983 238 s6
+1121 684 mt
+1121 684 s6
+1875 636 mt
+1875 636 s6
+1604 239 mt
+1604 239 s6
+1234 675 mt
+1234 675 s6
+1764 489 mt
+1764 489 s6
+2068 554 mt
+2068 554 s6
+1578 250 mt
+1578 250 s6
+1196 396 mt
+1196 396 s7
+1631 318 mt
+1631 318 d7
+1884 472 mt
+1884 472 s7
+1962 185 mt
+1962 185 s7
+1729 543 mt
+1729 543 s7
+1936 604 mt
+1936 604 s7
+1605 335 mt
+1605 335 s7
+1505 183 mt
+1505 183 d7
+2019 710 mt
+2019 710 d7
+2002 711 mt
+2002 711 s7
+1339 317 mt
+1339 317 d7
+1457 694 mt
+1457 694 s7
+2030 500 mt
+2030 500 s7
+2104 463 mt
+2104 463 d7
+2055 186 mt
+2055 186 d7
+1716 343 mt
+1716 343 s7
+1975 321 mt
+1975 321 s7
+1684 525 mt
+1684 525 s7
+1944 268 mt
+1944 268 d7
+1662 435 mt
+1662 435 s7
+1809 499 mt
+1809 499 s7
+1363 654 mt
+1363 654 d7
+1600 703 mt
+1600 703 s7
+1380 305 mt
+1380 305 d8
+1676 144 mt
+1676 144 s8
+1235 601 mt
+1235 601 s8
+1704 466 mt
+1704 466 s8
+1417 494 mt
+1417 494 s8
+1538 264 mt
+1538 264 s8
+2094 529 mt
+2094 529 s8
+1178 197 mt
+1178 197 s8
+1827 392 mt
+1827 392 s8
+1763 664 mt
+1763 664 s8
+1295 293 mt
+1295 293 s8
+1677 331 mt
+1677 331 d8
+1336 416 mt
+1336 416 s8
+1237 666 mt
+1237 666 s8
+2086 281 mt
+2086 281 s8
+1555 149 mt
+1555 149 s8
+1244 648 mt
+1244 648 s8
+1502 714 mt
+1502 714 d8
+1424 361 mt
+1424 361 s8
+1711 228 mt
+1711 228 s8
+1554 354 mt
+1554 354 s8
+1489 695 mt
+1489 695 s8
+1144 639 mt
+1144 639 s8
+1258 284 mt
+1258 284 s8
+2077 221 mt
+2077 221 s8
+1191 152 mt
+1191 152 s8
+2113 355 mt
+2113 355 s8
+1933 243 mt
+1933 243 s8
+1478 486 mt
+1478 486 s8
+1407 430 mt
+1407 430 s8
+1659 658 mt
+1659 658 s8
+%file 1, type 2, '/dev/null'
+
+%file 2, type 1, './D/messier.star'
+
+%file 3, type 1, './planet.star'
+
+1491 479 mt
+%diam 0.491
+1491 479 48 venus
+10 /Times-Roman fontsz
+1527 479 mt
+1527 479 mt
+(Venus) lbshw
+%Close
+end
+% end matches the dict begin after Prolog
+showpage
+%
+%%Trailer
+%%Pages: 1
