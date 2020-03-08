@@ -15,7 +15,7 @@ echo ""
 echo "NSTARS .........................."
 echo ""
 
-(cd ../nstars/P ;    T.sh)
+(cd ../nstars/R ;    T.sh)
 
 
 echo ""
@@ -43,13 +43,13 @@ echo ""
 echo "STARCH .........................."
 echo ""
 
-(cd ../starch/P ;  T.sh)
+(cd ../starch/R ;  T.sh)
 
 echo ""
 echo "NAVALO .........................."
 echo ""
 
-(cd ../navalo/P ;  T.sh)
+(cd ../navalo/R ;  T.sh)
 
 
 #-------------------------------------------------------------------------------

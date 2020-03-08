@@ -6,7 +6,7 @@ PROGS = libabmd.so main
 
 all: $(PROGS)
 
-CC = LANG=C gcc -g  
+CC = LANG=C gcc -std=c99 -g  
 
 #-------------------------------------------------------------------------------
 

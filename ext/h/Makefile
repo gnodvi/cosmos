@@ -9,17 +9,17 @@ include $(MAIN_SRC_DIR)/Make.mak
 
 COMMON_DIR = $(MAIN_SRC_DIR)/../common
 ABMD_DIR   = $(MAIN_SRC_DIR)/../iaaras/abmd
-NSTARS_DIR = $(MAIN_SRC_DIR)/../nstars/P
+NSTARS_DIR = $(MAIN_SRC_DIR)/../nstars/R
 AA-56M_DIR = $(MAIN_SRC_DIR)/../aa-56m
 DE118I_DIR = $(MAIN_SRC_DIR)/../de118i
 EPHOLD_DIR = $(MAIN_SRC_DIR)/../iaaras/eph-old-access
-STARCH_DIR = $(MAIN_SRC_DIR)/../starch/P
-NAVALO_DIR = $(MAIN_SRC_DIR)/../navalo/P
+STARCH_DIR = $(MAIN_SRC_DIR)/../starch/R
+NAVALO_DIR = $(MAIN_SRC_DIR)/../navalo/R
 
 #-------------------------------------------------------------------------------
 
 
-all:  ABMD__ NSTARS__ AA-56M__ DE118I__ EPHOLD__ STARCH__ NAVALO__ 
+all:  ABMD__ NSTARS__ AA-56M__ DE118I__ EPHOLD__ STARCH__ NAVALO__
 
 #-------------------------------------------------------------------------------
 
