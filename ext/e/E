@@ -14,11 +14,12 @@ echo ""
 
 (cd ../aa-56m/R ;      T.sh)
 
+
 echo ""
 echo "DE118I .........................."
 echo ""
 
-(cd ../de118i ;      T.sh)
+(cd ../de118i/R ;      T.sh)
 
 
 echo ""
