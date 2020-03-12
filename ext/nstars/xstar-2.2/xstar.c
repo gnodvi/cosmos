@@ -1,5 +1,6 @@
-//------------------------------------------------------------------------------
+// -*-  mode: c    ; coding: koi8   -*- ----------------------------------------
 
+//------------------------------------------------------------------------------
 /*
 ** XStar -- a animated n-body solver for X windows
 ** Copyright (C) 1995-1996  Wayne Schlitt (wayne@midwestcs.com) and others
@@ -69,7 +70,7 @@
 
 //------------------------------------------------------------------------------
 void
-Quit( int signal )
+Quit (int signal)
 {
   if ( timeout )
   {
@@ -99,7 +100,6 @@ Quit( int signal )
 
   exit(-signal);
 }
-
 //------------------------------------------------------------------------------
 void
 Initialize ()
@@ -152,13 +152,13 @@ Initialize ()
   }
 
 
-  signal(SIGHUP, Quit);
-  signal(SIGINT, Quit);
+  signal(SIGHUP,  Quit);
+  signal(SIGINT,  Quit);
   signal(SIGQUIT, Quit);
-  signal(SIGILL, Quit);
-  signal(SIGFPE, Quit);
+  signal(SIGILL,  Quit);
+  signal(SIGFPE,  Quit);
   signal(SIGKILL, Quit);
-  signal(SIGBUS, Quit);
+  signal(SIGBUS,  Quit);
   signal(SIGSEGV, Quit);
   signal(SIGTERM, Quit);
   signal(SIGSTOP, Quit);
@@ -167,6 +167,7 @@ Initialize ()
   #ifdef SIGXCPU
   signal(SIGXCPU, Quit);
   #endif
+
 }
 //------------------------------------------------------------------------------
 /* Change_Screen_Saver()                                                */
@@ -182,9 +183,9 @@ Change_Screen_Saver (on)
   static int  timeout, interval, blanking, exposures;
   static int  set_yet = FALSE;
 
-  if( on )
+  if (on)
   {
-    if( set_yet )
+    if (set_yet)
     {
       /* Restore the old settings. */
       XSetScreenSaver      (display.dpy, timeout, interval, blanking,exposures);
@@ -196,9 +197,9 @@ Change_Screen_Saver (on)
   else
   {
     /* Save the old settings and turn off the server's screen saver. */
-    XGetScreenSaver(display.dpy, &timeout, &interval, &blanking,&exposures);
-    XSetScreenSaver(display.dpy, 0, 0, DefaultBlanking, DefaultExposures);
-    XResetScreenSaver(display.dpy);
+    XGetScreenSaver   (display.dpy, &timeout, &interval, &blanking,&exposures);
+    XSetScreenSaver   (display.dpy, 0, 0, DefaultBlanking, DefaultExposures);
+    XResetScreenSaver (display.dpy);
     set_yet = TRUE;
   }
 }
@@ -230,6 +231,7 @@ Traverse_Tree (display, current)
 
   /* Let's not waste any memory. */
   if( num_children ) XFree( (char *) children );
+
 }
 //------------------------------------------------------------------------------
 /* Wait_For_Idleness()                                                  */
@@ -1118,18 +1120,19 @@ int
 main (int argc, char **argv)
 {
 
-  char *geometry = NULL;
-
-  int s_num_test =  0;  // 0,  1, 2, 4 , 8, 9 - глобальная переменная (система)
-  int y_num_test = -1; // по умолчанию - стандартный запуск с окошком
-
   int DEBUG_var  =  0;
 
   int is_X = 1;
-
   int my_count_max = -1;
 
+
   Initialize ();
+
+
+  char *geometry = NULL;
+
+  int s_num_test =  0;  // 0,  1, 2, 4 , 8, 9 - глобальная переменная (система)
+  int y_num_test = -1;  // по умолчанию - стандартный запуск с окошком
 
   Parse_Arguments (argc, argv, &geometry, 
                    &s_num_test, &y_num_test);
