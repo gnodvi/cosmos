@@ -5,10 +5,10 @@
 include ./Make.mak
 
 
+AA-56M_DIR = ../aa-56m/R
 COMMON_DIR = ../common
 ABMD_DIR   = ../iaaras/abmd
 NSTARS_DIR = ../nstars/R
-AA-56M_DIR = ../aa-56m
 DE118I_DIR = ../de118i
 EPHOLD_DIR = ../iaaras/eph-old-access
 STARCH_DIR = ../starch/R
