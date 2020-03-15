@@ -23,10 +23,10 @@ echo ""
 
 
 echo ""
-echo "ABMD   .........................."
+echo "IAARAS   ........................"
 echo ""
 
-(cd ../iaaras/abmd ; T.sh)
+(cd ../iaaras ; I)
 
 
 echo ""
@@ -41,13 +41,6 @@ echo "NSTARS .........................."
 echo ""
 
 (cd ../nstars/R ;    T.sh)
-
-
-echo ""
-echo "EPHOLD .........................."
-echo ""
-
-(cd ../iaaras/eph-old-access ;  T.sh)
 
 
 echo ""

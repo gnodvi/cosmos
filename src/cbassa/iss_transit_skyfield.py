@@ -23,7 +23,9 @@ if __name__ == "__main__":
            "2 25544  51.6329  10.4117 0005395 206.7073 225.7658 15.68815833316945"]
 
     satellite = EarthSatellite (tle[1], tle[2], tle[0])
-    ts = load.timescale ()
+
+    #ts = load.timescale () # not work without internet
+    ts = load.timescale (builtin=True) 
     
     t    = ts.utc (2004, 6, 8, 10, 9, 17)
     tsat = ts.utc (2004, 6, 8, 10, 9, range(16, 20))

@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 
-PROGS = transit_skyfield.png
+PROGS = transit_skyfield.png  transit_astropy.png
 
 all: tests
 
@@ -11,6 +11,9 @@ tests: $(PROGS)
 
 transit_skyfield.png:
 	python iss_transit_skyfield.py
+
+transit_astropy.png:
+	python3 iss_transit_astropy.py
 
 #-------------------------------------------------------------------------------
 

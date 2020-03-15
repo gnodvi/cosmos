@@ -1,45 +1,29 @@
-#-------------------------------------------------------------------------------
-#-------------------------------------------------------------------------------
-
-ARCHPATH := $(shell dpkg-architecture -q DEB_BUILD_MULTIARCH)
-
-TCLTK_CONF_DIR?=/usr/lib/$(ARCHPATH)/tcl8.6
 
 #-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
-AR = @ar ru
-CP = @-cp
-RM = @-rm
-MV = mv
-EDIT_PROG  = xemacs
-MAKE = make
 
-SOFT_DIR = $(HOME)/.MSOFT
+ABMD_DIR   = ./abmd/R
+EPHOLD_DIR = ./eph-old-access/R
 
 #-------------------------------------------------------------------------------
 
-_OS := $(shell uname -s)
-
-ifeq ($(_OS), Linux)
-else
-endif
-
-_NODENAME := $(shell uname -n)
-
-
-#------------------------------------------------
-
-include $(TCLTK_CONF_DIR)/tclConfig.sh
+all:  ABMD__ EPHOLD__ 
 
 #-------------------------------------------------------------------------------
 
-TCL_INCS=$(TCL_INCLUDE_SPEC) 
 
-TCL_LIB_SPEC_clean	= $(subst ', , $(TCL_LIB_SPEC))
+ABMD__  :
+	(cd $(ABMD_DIR);   make)
 
-TCL_LIBS=$(TCL_LIB_SPEC_clean) 
+EPHOLD__ :
+	(cd $(EPHOLD_DIR); make)
 
-TCL_STUB_LIB_SPEC_clean = $(subst ', , $(TCL_STUB_LIB_SPEC))
+#-------------------------------------------------------------------------------
+
+clean : 
+	(cd $(ABMD_DIR);   make clean)
+	(cd $(EPHOLD_DIR); make clean)
 
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
