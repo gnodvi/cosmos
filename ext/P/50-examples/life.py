@@ -1,5 +1,6 @@
-#!/usr/bin/python3.4
-
+#!/usr/bin/env python3
+#
+# ------------------------------------------------------------------------------
 
 # life.py -- A turtle-based version of Conway's Game of Life.
 #
