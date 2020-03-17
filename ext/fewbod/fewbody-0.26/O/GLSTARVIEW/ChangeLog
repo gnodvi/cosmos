@@ -1,0 +1,50 @@
+2006-04-12 14:25  fregeau
+
+	* glstarview.h: Updated version.
+
+2006-04-12 14:21  fregeau
+
+	* README, TODO, glstarview.c, glstarview.h: Removed all font stuff
+	  so that glstarview will work without X acceleration.	Also added
+	  keybindings to speed up or slow down animation.  Also randomized
+	  colors for objects beyond N=5.
+
+2005-10-27 12:45  fregeau
+
+	* scripts/: post.sh, release.sh, setver.sh: Updated scripts.
+
+2005-10-27 12:37  fregeau
+
+	* INSTALL, Makefile, glstarview.h, scripts/start.sh, Makefile.osx,
+	  Makefile.rh9: Updated a few things.
+
+2004-04-27 21:42  fregeau
+
+	* Makefile.osx: Extra library needed by OS X to properly link.
+
+2004-04-27 21:08  fregeau
+
+	* ChangeLog, ChangeLog.old: Renamed ChangeLog.
+
+2004-04-27 21:06  fregeau
+
+	* glstarview.h: Modified the error macro so it works on Mac OS X.
+
+2004-04-27 21:05  fregeau
+
+	* Makefile.osx: Makefile for Mac OS X.
+
+2004-02-18 21:17  fregeau
+
+	* AUTHORS, BUGS, COPYING, ChangeLog, INSTALL, Makefile,
+	  Makefile.rh9, NEWS, README, THANKS, TODO, glstarview.c,
+	  glstarview.h, scripts/post.sh, scripts/release.sh,
+	  scripts/setver.sh, scripts/start.sh: Imported sources
+
+2004-02-18 21:17  fregeau
+
+	* AUTHORS, BUGS, COPYING, ChangeLog, INSTALL, Makefile,
+	  Makefile.rh9, NEWS, README, THANKS, TODO, glstarview.c,
+	  glstarview.h, scripts/post.sh, scripts/release.sh,
+	  scripts/setver.sh, scripts/start.sh: Initial revision
+

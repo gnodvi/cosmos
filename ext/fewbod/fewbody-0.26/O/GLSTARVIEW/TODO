@@ -1,0 +1,4 @@
+* Redraw screen when window is focused.
+* Dragging to rotate doesn't work so well.  It rotates in two directions
+  sequentially, but the two transformations don't commute.  There are much
+  better ways to do rotations...

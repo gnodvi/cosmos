@@ -1,0 +1,50 @@
+GLStarView is an OpenGL-based utility for visualizing N-body 
+simulations.  It is available free on the web (alum.mit.edu/www/fregeau) 
+and is licensed under the GNU GPL.
+
+The input format is the Starlab story format, which is spoken by Starlab 
+(of course) and Fewbody, a numerical toolkit for doing small-N 
+gravitational dynamics (alum.mit.edu/www/fregeau).
+
+GLStarView renders each star as a sphere, draws a rudimentary set of 
+axes, and prints the current time and log info to stdout.  GLStarView 
+allows you to generally explore your N-body simulation in 3D.  You can 
+pause, unpause, step through frame-by-frame, zoom in and out, rotate, 
+change the sizes of the stars, etc.
+
+Here is the usage summary, along with the key- and mousebindings 
+(obtained via "glstarview -h"):
+
+USAGE:
+  glstarview [options...]
+
+OPTIONS:
+  -f --fullscreen : full screen mode
+  -p --paused     : start paused
+  -a --noaxes     : start with axes off
+  -t --time       : start with time display on
+  -l --log        : start with log display on
+  -d --debug      : turn on debugging
+  -V --version    : print version info
+  -h --help       : display this help text
+
+KEYBINDINGS:
+  PAGE (UP/DOWN) : zoom (out/in)
+  ARROW KEYS     : rotate
+  h              : print this help text
+  q, ESCAPE      : quit
+  p              : pause/unpause
+  SPACE          : step through frames (while paused)
+  b              : make stars bigger
+  s              : make stars smaller
+  m              : use more polygons to render stars
+  f              : use fewer polygons to render stars
+  a              : toggle axes
+  t              : toggle time printout
+  l              : toggle log printout
+  <              : slow down animation
+  >              : speed up animation
+
+MOUSEBINDINGS:
+  DRAG                   : rotate
+  [SHIFT] DRAG (up/down) : zoom (in/out)

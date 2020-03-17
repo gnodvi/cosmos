@@ -1,0 +1,54 @@
+0.6-devel (Mon Oct  6 16:06:52 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Fixed a bug where if some stars were at large radius, the ones near
+	  the origin were positioned with terrible accuracy.
+	
+0.5 (Thu Jul 24 11:53:31 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Big bugfix release.
+	
+0.5-devel (Thu Jul 24 11:50:41 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Fixed a segfault caused by overwriting a string's array bounds.
+	
+0.4 (Fri Jul 18 13:22:25 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Released a new, bugfixed version.
+
+0.4-devel (Fri Jul 18 13:21:09 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Fixed a bug that caused GLStarView to display nothing but a black
+	  screen on any computer other than my own.
+	
+0.4-devel (Fri Jul 18 11:38:06 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Added install and uninstall targets to the Makefile.
+	
+0.3 (Mon Jul 14 11:57:20 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Released new, much improved version.
+	
+0.3-devel (Fri Jul 11 13:38:04 EDT 2003) John Fregeau <fregeau@mit.edu>
+
+	* Created scripts directory.
+	* Created BUGS, NEWS, README, and TODO files.
+	* Added a Makefile for Red Hat 9.
+	* Removed the trackball directory, since it wasn't even used.
+	* Added drawing of axes.
+	* Added printing of current time to screen.
+	* Added printing of current log to screen.
+	* Added bindings help printout.
+	* Created some rudimentary documentation.
+	* Added installation instructions for Red Hat 9.
+	
+0.2 (Thu Feb 13 15:38:31 EST 2003) John Fregeau <fregeau@mit.edu>
+
+	* Data input is expected in Starlab story format.
+	* Added command line flags via getopt.
+	* Optimized the drawing engine so that the screen is refreshed only
+	  when the scene has changed, plus other optimizations.
+	
+0.2-devel (Fri Jan 31 13:19:59 EST 2003) John Fregeau <fregeau@mit.edu>
+
+	* A whole bunch of stuff...
+	

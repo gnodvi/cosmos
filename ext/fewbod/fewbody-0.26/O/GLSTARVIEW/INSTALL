@@ -1,0 +1,14 @@
+Just type "make" on a GNU system, or "gmake" on a non-GNU system.  Note
+that you will need to have GL, GLU, and glut (and their corresponding
+development packages) installed first.  These packages come with most modern
+Linux distributions.  Try www.rpmfind.net if you can't find them.  Instructions
+for other unices are welcome.
+
+Doing "make install" will install the executable in $HOME/bin; "make 
+uninstall" will uninstall it.
+
+3D acceleration is usually not necessary unless you have a really slow CPU, or
+want to render at really high resolution.
+
+Mac OS X users will have to install not only glut, but also gnugetopt.  I 
+recommend using Fink for this.

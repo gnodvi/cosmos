@@ -6,6 +6,7 @@
 AA-56M_DIR = ../aa-56m/R
 COMMON_DIR = ../common
 DE118I_DIR = ../de118i/R
+FEWBOD_DIR = ../fewbod/R
 IAARAS_DIR = ../iaaras
 NSTARS_DIR = ../nstars/R
 STARCH_DIR = ../starch/R
@@ -13,7 +14,7 @@ NAVALO_DIR = ../navalo/R
 
 #-------------------------------------------------------------------------------
 
-all:  AA-56M__ DE118I__ IAARAS__ NAVALO__ NSTARS__ STARCH__ 
+all:  AA-56M__ DE118I__ FEWBOD__ IAARAS__ NAVALO__ NSTARS__ STARCH__ 
 
 #-------------------------------------------------------------------------------
 
@@ -23,6 +24,9 @@ AA-56M__ :
 
 DE118I__ :
 	(cd $(DE118I_DIR); make)
+
+FEWBOD__  :
+	(cd $(FEWBOD_DIR); make)
 
 IAARAS__  :
 	(cd $(IAARAS_DIR); make)
@@ -42,7 +46,9 @@ STARCH__ :
 clean : 
 	(cd $(AA-56M_DIR); make clean)
 	(cd $(DE118I_DIR); make clean)
+	(cd $(FEWBOD_DIR); make clean)
 	(cd $(IAARAS_DIR); make clean)
+	(cd $(NAVALO_DIR); make clean)
 	(cd $(NSTARS_DIR); make clean)
 	(cd $(STARCH_DIR); make clean)
 
